@@ -4,8 +4,8 @@
 
 % Edit these commands for each assignment
 
-\newcommand{\assignmentduedate}{September 10}
-\newcommand{\assignmentassignedate}{September 7}
+\newcommand{\assignmentduedate}{September 2}
+\newcommand{\assignmentassignedate}{August 30}
 \newcommand{\assignmentnumber}{One}
 
 \newcommand{\labyear}{2019}
@@ -25,10 +25,6 @@
 
 \newcommand{\testprogram}{\lstinline{TestSwap}}
 \newcommand{\testprogramsource}{\lstinline{src/test/java/practicalone/TestSwap.java}}
-
-% Edit this commands to describe key deliverables
-
-\newcommand{\reflection}{\lstinline{writing/reflection.md}}
 
 % Commands to describe key development tasks
 
@@ -229,120 +225,6 @@ the \command{cd} and \command{ls} commands to explore the files that you
 automatically downloaded from GitHub. What files and directories do you see?
 What do you think is their purpose? Spend some time exploring, sharing your
 discoveries with a neighbor and a \mbox{teaching assistant}.
-
-\section*{Creating and Testing a Java Program that Swaps}
-
-In order view the source code of a Java program or a Markdown-based writing
-assignment, you need a text editor. There are many different text editors on
-your workstation and you should feel free to explore these on your own. For
-instance, you may adopt either the GVim or the Atom text editor to complete this
-practical assignment. Please study the source code of the \mainprogram~program,
-noticing that one of its methods is incomplete. Specifically, you will notice
-that the program is missing an implementation of the \program{swap} method. Can you
-add in a full implementation of this method? Why do you think that the
-\program{swap} method accepts parameters of type \program{AtomicInteger}?
-
-Next, you should also notice that the \mainprogram{} has a test suite called
-\testprogram{} that is written in the JUnit testing framework; please refer to
-Section 1.9 and the comment's in the source code of this test suite to learn
-more about how it works. Intuitively, a JUnit test suite has individual test
-cases, written as Java methods, that each work to establish a confidence in the
-correctness of \mainprogram{}. First, please note that this test suite initially
-passes even though the program is incorrect. Why? Finally, you should add a new
-test case to this suite. What type of test is most needed?
-
-Now, if you want to \step{build} your program you can type the command
-\gradlebuild{} in your terminal, thereby causing the Java compiler to check your
-program for errors and get it ready to run. If you see any error messages, go
-back to your text editor and figure out what you mis-typed and fix it. Oncer you
-have solved the problem, make a note of the error and the solution for resolving
-it. Re-save your program and then build it again by re-running the
-\gradlebuild{}. If you cannot build \mainprogram{} correctly, then please talk
-with a teaching assistant or the instructor. You can also run the test suite for
-the \mainprogram{} by typing \gradletest{} in the terminal. What is the purpose
-of each of these test cases? What output do you see from running the test suite?
-Does this output suggest that the program is likely to produce the correct
-output? How did you know?
-
-Once you resolve all of the building and testing errors, you can run your
-swapping program by typing \gradlerun{} in the terminal window---this is the
-``execute'' step that will run your program and produce the designated output.
-Do you see that it produces correct output like in Figure~\ref{fig:output}? If
-not, then determine what is wrong and then repair the program and re-build and
-re-run it.
-
-\section*{Checking the Correctness of Your Program and Writing}
-
-As verified by Checkstyle tool, the source code for the \mainprogram{} and
-\testprogram{} files must adhere to all of the requirements in the Google Java
-Style Guide available at
-\url{https://google.github.io/styleguide/javaguide.html}. The Markdown file
-that contains your reflection must adhere to the standards described in the
-Markdown Syntax Guide
-\url{https://guides.github.com/features/mastering-markdown/}. Finally, your
-\reflection{} file should adhere to the Markdown standards established by the
-\step{Markdown linting} tool available at
-\url{https://github.com/markdownlint/markdownlint/} and the writing standards
-set by the \step{prose linting} tool from \url{http://proselint.com/}. Instead
-of requiring you to manually check that your deliverables adhere to these
-industry-accepted standards, Gradle and GatorGrader make it easy for you to
-automatically check if your submission meets the standards for correctness. For
-instance, Gradle will run the provided JUnit tests, check to ensure that
-\mainprogram{} produces exactly six lines of output, and GatorGrader will see
-if you committed to GitHub enough times when completing this practical
-assignment.
-
-To get started with the use of GatorGrader, type the command
-\gatorgraderstart{} in your terminal window. If you have mistakes in your
-assignment, then you will need to review GatorGrader's output, find the
-mistake, and try to fix it. Once your program is building correctly, fulfilling
-at least some of the assignment's requirements, you should transfer your files
-to GitHub using the \gitcommit{} and \gitpush{} commands. For example, if you
-want to signal that the \mainprogramsource{} file has been changed and is ready
-for transfer to GitHub you would first type \gitcommitmainprogram{} in your
-terminal, followed by typing \gitpush{} to perform the transfer.
-
-\begin{figure}[t]
-  \centering
-  {\small
-  \begin{verbatim}
-    Values before the swap:
-      First value : 10
-      Second value: 20
-    Values after the swap:
-      First value : 20
-      Second value: 10
-  \end{verbatim}}
-  \vspace*{-.35in}
-  \caption{The Expected Output of the \mainprogram{} Program.}~\label{fig:output}
-  \vspace*{-.25in}
-\end{figure}
-
-% After the course instructor enables \step{continuous integration} with a system
-% called Travis CI,
-
-When you use the \gitpush{} command to transfer your source code to your GitHub
-repository, Travis CI will initialize a \step{build} of your assignment,
-checking to see if it meets all of the requirements. If both your program and
-test suite meet all of the established requirements, then you will see a green
-\checkmark{} in the listing of commits in GitHub after awhile. If your
-submission does not meet the requirements, a red \naughtmark{} will appear
-instead. The instructor will reduce a student's grade for this assignment if
-the red \naughtmark{} appears on the last commit in GitHub immediately before
-the assignment's due date. Yet, if the green \checkmark{} appears on the last
-commit in your GitHub repository, then you satisfied all of the main checks,
-thereby allowing the course instructor to evaluate other aspects of your source
-code and writing, as further described in the \step{Evaluation} section of this
-assignment sheet. Unless you provide the instructor with documentation of the
-extenuating circumstances that you are facing, no late work will be considered
-towards your grade for this practical assignment.
-
-Please note that if you are completing this practical assignment on your own
-laptop the GatorGrader program will only run correctly if you have installed
-all of the programs on which it depends. Note that assignment checking will
-still work with Travis CI even if you do not have these programs installed on
-your laptop. Please see a teaching assistant if you cannot install these
-programs.
 
 \section*{Summary of the Required Deliverables}
 

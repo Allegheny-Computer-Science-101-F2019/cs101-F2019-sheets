@@ -300,6 +300,35 @@ available at this web site:
 \url{https://docs.docker.com/install/linux/docker-ce/ubuntu/}. Okay, now you are
 ready to install and use Docker!
 
+\begin{figure}
+
+\begin{verbatim}
+docker run hello-world
+
+docker : Unable to find image 'hello-world:latest' locally
+...
+
+latest:
+Pulling from library/hello-world
+ca4f61b1923c:
+Pulling fs layer
+ca4f61b1923c:
+Download complete
+ca4f61b1923c:
+Pull complete
+Digest: sha256:97ce6fa4b6cdc0790cda65fe7290b74cfebd9fa0c9b8c38e979330d547d22ce1
+Status: Downloaded newer image for hello-world:latest
+
+Hello from Docker!
+This message shows that your installation appears to be working correctly.
+...
+\end{verbatim}
+
+\vspace*{-.25in}
+\caption{Example Output from Running a ``Hello World!''  Docker Container.}~\label{fig:docker}
+\vspace*{-.25in}
+\end{figure}
+
 \begin{enumerate}
 
     \item Determine the version of your operating system. If your laptop meets
@@ -359,34 +388,47 @@ ready to install and use Docker!
     Figure~\ref{fig:docker} you can high five a technical leader as your Docker
     set up was successful!
 
+  \item Note that even though the previous Docker container caused your program
+    to print a diagnostic message, it did not allow you to run any programs.
+    With that said, it is also possible to download and use a Docker container
+    that contains the complete version of an operating system! To explore this
+    feature of Docker, please type the command \command{docker run -it ubuntu
+    /bin/bash} and notice that it produces output like that found in
+    Figure~\ref{fig:ubuntu}. Congratulations, you are now running the Linux
+    operating system inside a container running on your host operating system!
+    If you got stuck on this step, please ask the course instructor for help.
+
+  \item You can use commands line \command{cd} and \command{ls} to explore the
+    default configuration of this Ubuntu container provided by Docker. Now, type
+    the commands \command{docker ps} and \command{docker images} and explain
+    this output to a technical leader and a fellow student. You should also
+    paste the output of these commands into the \url{#practicals} channel in
+    Slack. Remember, you can paste a block of formatted text into Slack by using
+    three ``backticks'', pasting the content, and then closing with three
+    additional backticks. Finally, please write in Slack about what you
+    experienced during the installation of Docker. What did you find confusing?
+    Why did you find it to be confusing? Based on your experiences in this
+    practical assignment, what do you think are the benefits associated with
+    using Docker in this computer science course?
+
 \end{enumerate}
+
 
 \begin{figure}
 
 \begin{verbatim}
-docker run hello-world
-
-docker : Unable to find image 'hello-world:latest' locally
-...
-
-latest:
-Pulling from library/hello-world
-ca4f61b1923c:
-Pulling fs layer
-ca4f61b1923c:
-Download complete
-ca4f61b1923c:
-Pull complete
-Digest: sha256:97ce6fa4b6cdc0790cda65fe7290b74cfebd9fa0c9b8c38e979330d547d22ce1
-Status: Downloaded newer image for hello-world:latest
-
-Hello from Docker!
-This message shows that your installation appears to be working correctly.
-...
+Unable to find image 'ubuntu:latest' locally
+latest: Pulling from library/ubuntu
+35c102085707: Pull complete
+251f5509d51d: Pull complete
+8e829fe70a46: Pull complete
+6001e1789921: Pull complete
+Digest: sha256:d1d454df0f579c6be4d8161d227462d69e163a8ff9d20a847533989cf0c94d90
+Status: Downloaded newer image for ubuntu:latest
 \end{verbatim}
 
 \vspace*{-.25in}
-\caption{Output from Running a Docker Container.}~\label{fig:docker}
+\caption{Example Output from Running a Ubuntu Docker Container.}~\label{fig:ubuntu}
 \vspace*{-.25in}
 \end{figure}
 

@@ -334,9 +334,8 @@ This message shows that your installation appears to be working correctly.
     \item Determine the version of your operating system. If your laptop meets
       the requirements outlined below, then you can proceed to the next step.
       For older MacOS and Windows operating systems, including Windows 10 Home,
-      please read the installation instructions for Docker ToolBox, provided
-      later in this assignment sheet and in that program's \mbox{GitHub
-      repository}.
+      please read the installation instructions for Docker Toolbox, provided at
+      \url{https://docs.docker.com/toolbox/toolbox_install_windows/}.
 
       \textbf{Docker Desktop Specifications} \\
       -- Mac:
@@ -365,13 +364,13 @@ This message shows that your installation appears to be working correctly.
       MacOS you can find the installation guide at
       \url{https://docs.docker.com/docker-for-mac/install/}. If you have the
       Windows operating system, please follow the installation guide at
-      \url{https://docs.docker.com/docker-for-windows/install/}. Linux users can
-      use their package manager when following the instructions at the
+      \url{https://docs.docker.com/docker-for-windows/install/}. Students with
+      Linux can use a package manager when following the instructions at the
       aforementioned site.
 
-      Please note that the Docker Desktop for Mac and Windows requires you to create
-      an account to download. To bypass this, you can use the following direct
-      download links:
+      Please note that the Docker Desktop for Mac and Windows requires you to
+      create an account to download the platform. To bypass this, you can use
+      the following direct download links:
 
     \begin{itemize}
         \item Windows: \\ \url{https://download.docker.com/win/stable/Docker\%20for\%20Windows\%20Installer.exe}
@@ -382,13 +381,13 @@ This message shows that your installation appears to be working correctly.
     window on your machine. In MacOS and Linux, you can search for a
     ``terminal'' and on Windows machines look for \command{cmd}. If you
     correctly followed the previous assignment steps and you use Windows, then
-    you can also use the new ``terminal'' that you installed. Now in the
+    you can also use the new ``terminal'' that you installed. Now, in the
     terminal window you can type \command{docker run hello-world} command and
     press ``Enter''. If you see an output similar to the one in
     Figure~\ref{fig:docker} you can high five a technical leader as your Docker
     set up was successful!
 
-  \item Note that even though the previous Docker container caused your program
+  \item Note that even though the previous Docker container caused your terminal
     to print a diagnostic message, it did not allow you to run any programs.
     With that said, it is also possible to download and use a Docker container
     that contains the complete version of an operating system! To explore this
@@ -432,11 +431,51 @@ Status: Downloaded newer image for ubuntu:latest
 \vspace*{-.25in}
 \end{figure}
 
+\vspace*{-.05in}
+
+After completing each stage of this practical assignment, you should have these
+correctly working versions of the following program installed on your laptop,
+regardless of your operating system.
+
+\vspace*{-.05in}
+
+\begin{itemize}
+  \setlength{\itemsep}{0pt}
+
+  \item Text editor
+
+  \item Package manager
+
+  \item Terminal window
+
+  \item Git command-line client
+
+  \item Docker container platform
+
+    \vspace*{-.1in}
+    \begin{itemize}
+      \setlength{\itemsep}{0pt}
+
+      \item Docker ``Hello World!'' container
+      \item Docker Ubuntu container
+
+    \end{itemize}
+
+\end{itemize}
+
+\vspace*{-.1in}
+
+Every student in this course is must have access to a Windows, MacOS, or Linux
+laptop that correctly runs these programs, in full support of forthcoming Java
+software development projects.
+
 \section*{Summary of the Required Deliverables}
 
-\noindent Students do not need to submit printed source code or technical
-writing for any assignment in this course. Instead, this assignment invites you
-to submit, using Slack the following deliverables.
+% \noindent Students do not need to submit printed source code or technical
+% writing for any assignment in this course.
+
+\noindent This assignment invites you to submit, using \url{#practicals} in
+Slack, the following deliverables:
 
 \vspace*{-.025in}
 
@@ -444,13 +483,13 @@ to submit, using Slack the following deliverables.
 
   \setlength{\itemsep}{0in}
 
-\item A properly documented, well-formatted, and correct version of
-  \mainprogramsource{} that meets the established requirements and produces the
-  desired output.
+  \item A description of the challenges that you experienced and the solutions
+    that you developed for each challenge, following each of the prompts
+    previously given in the assignment sheet.
 
-\item A properly documented, well-formatted, and correct version of
-  \testprogramsource{} that meets the established requirements and produces the
-  desired output.
+  \item The correctly formatted and explained output from running Docker
+    commands like \command{docker ps} and \command{docker images} in your
+    correctly configured terminal window.
 
 \end{enumerate}
 
@@ -458,19 +497,14 @@ to submit, using Slack the following deliverables.
 
 \section*{Evaluation of Your Practical Assignment}
 
-Using a report that the instructor shares with you through the commit log in
-GitHub, you will privately received a grade on this assignment and feedback on
-your submitted deliverables. Your grade for the assignment will be a function
-of the whether or not it was submitted in a timely fashion and if your program
-received a green \checkmark{} indicating that it met all of the requirements.
-Other factors will also influence your final grade on the assignment. In
-addition to studying the efficiency and effectiveness of your Java source code,
-the instructor will also evaluate the accuracy of both your technical writing
-and the comments in your source code. If your submission receives a red
-\naughtmark{}, the instructor will reduce your grade for the assignment while
-still considering the regularity with which you committed to your GitHub
-repository and the overall quality of your partially completed work. Please see
-the instructor if you have questions about the evaluation of this practical
-assignment.
+All practical assignments in this course are graded on a mastery, or
+credit-no-credit, basis. For this assignment, you will receive credit as long as
+you paste all of the required information into the \url{#practicals} channel in
+Slack. You will know that you earned the checkmark grade for this assignment if
+you can see a checkmark emoji next to a comment that you made in the appropriate
+channel. Please bear in mind that, for future practical and laboratory
+assignments, you will submit all of your source code and technical writing
+through a GitHub repository created by GitHub Classroom. However, for this
+assignment, you must instead submit all of your work through Slack.
 
 \end{document}

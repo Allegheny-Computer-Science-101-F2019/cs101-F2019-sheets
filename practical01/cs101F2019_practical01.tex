@@ -340,35 +340,28 @@ ready to install and use Docker!
       use their package manager when following the instructions at the
       aforementioned site.
 
- Please note that the Docker Desktop for Mac and Windows requires you to create
- an account to download. To bypass this, you can use the following direct
- download links:
+      Please note that the Docker Desktop for Mac and Windows requires you to create
+      an account to download. To bypass this, you can use the following direct
+      download links:
 
     \begin{itemize}
         \item Windows: \\ \url{https://download.docker.com/win/stable/Docker\%20for\%20Windows\%20Installer.exe}
         \item Mac: \url{https://download.docker.com/mac/stable/Docker.dmg}
     \end{itemize}
 
-    \item In this class we will use a command-line interface, which allows the
-      user to interact with the computer by typing in commands in a ``terminal''
-      window. Computing professionals prefer to use the command line interface,
-      built into operating systems like Linux, instead of using the graphical
-      user interface. In many situations command line interface tends to be very
-      efficient and effective, for example, it allows you to complete some tasks
-      with a simple one line command instead of using the ``pumping'' motion of
-      the mouse!
-
-    Once your docker installation is complete, please locate a terminal window
-    on your machine. In MacOS and Linux, you can search for a ``terminal'' and
-    on Windows machines look for ``cmd'' (command prompt). If you are using
-    Windows, we recommend using a Linux-based terminal, a step that you will
-    complete when installing Git in Section 2, step 2.
-
-    Now in the terminal window type {\tt docker run hello-world} command and
-    press ``Enter''. If you see an output similar to the one below, feel free to
-    high five a technical leader - your docker set up was successful!
+  \item Once your Docker installation is complete, please locate a terminal
+    window on your machine. In MacOS and Linux, you can search for a
+    ``terminal'' and on Windows machines look for \command{cmd}. If you
+    correctly followed the previous assignment steps and you use Windows, then
+    you can also use the new ``terminal'' that you installed. Now in the
+    terminal window you can type \command{docker run hello-world} command and
+    press ``Enter''. If you see an output similar to the one in
+    Figure~\ref{fig:docker} you can high five a technical leader as your Docker
+    set up was successful!
 
 \end{enumerate}
+
+\begin{figure}
 
 \begin{verbatim}
 docker run hello-world
@@ -391,6 +384,11 @@ Hello from Docker!
 This message shows that your installation appears to be working correctly.
 ...
 \end{verbatim}
+
+\vspace*{-.25in}
+\caption{Output from Running a Docker Container.}~\label{fig:docker}
+\vspace*{-.25in}
+\end{figure}
 
 \section*{Summary of the Required Deliverables}
 

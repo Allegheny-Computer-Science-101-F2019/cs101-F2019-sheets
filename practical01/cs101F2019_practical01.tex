@@ -247,6 +247,101 @@ laptop. Bearing in mind that you must follow steps customized to your laptop,
 please talk to the instructor or a technical leader if you get stuck on these
 steps.
 
+Before reading the installation instructions for Docker, you should know that
+they are customized for people who use Windows or MacOS. If you use the Linux
+operating system, then you can follow the installation instructions available at
+this web site: \url{https://docs.docker.com/install/linux/docker-ce/ubuntu/}.
+
+\begin{enumerate}
+
+    \item As the first step of the Docker set up process, please check and make
+      a note of the version of your operating system. If your laptop meets the
+      requirements outlined below, then proceed to the next step. For older
+      MacOS and Windows Operating Systems, including Windows 10 Home, see the
+      next section (1.1) about Docker ToolBox. \\
+
+ \textbf{Docker Desktop Specifications} \\
+ Mac:
+    \begin{itemize}
+        \item 2010 model or newer with hardware support for MMU, EPT, and Unrestricted Mode
+        \item macOS Sierra 10.12 or newer
+        \item 4 GB of RAM
+        \item VirtualBox prior to version 4.3.30 cannot be installed
+    \end{itemize}
+Windows:
+    \begin{itemize}
+        \item Windows 10 64bit Pro, Enterprise, or Education (Build 15063 or later)
+        \item Virtualization is enabled in BIOS
+        \item CPU SLAT-capable feature
+        \item 4 GB of RAM
+    \end{itemize}
+Linux:
+    \begin{itemize}
+        \item 64bit
+        \item Kernel 3.10 or later
+    \end{itemize}
+
+    \item Now, go to \url{https://docs.docker.com/install/} and  from the menu
+      on the left-hand side select and follow the installation tutorial for your
+      operating system (Linux, MacOS, or Windows). For example, if you have
+      MacOS you can find installation guide on
+      \url{https://docs.docker.com/docker-for-mac/install/}, if you have Windows
+      operating system on
+      \url{https://docs.docker.com/docker-for-windows/install/} and for Linux
+      you can proceed to
+      \url{https://docs.docker.com/install/linux/docker-ce/binaries/}.
+
+ Please note that the Docker Desktop for Mac and Windows requires you to create
+ an account to download. To bypass this, use the following download links:
+
+    \begin{itemize}
+        \item Windows: \url{https://download.docker.com/win/stable/Docker\%20for\%20Windows\%20Installer.exe}
+        \item Mac: \url{https://download.docker.com/mac/stable/Docker.dmg}
+    \end{itemize}
+
+    \item In this class we will use a command-line interface, which allows the
+      user to interact with the computer by typing in commands in a ``terminal''
+      window. Computing professionals prefer to use the command line interface,
+      built into operating systems like Linux, instead of using the graphical
+      user interface. In many situations command line interface tends to be very
+      efficient and effective, for example, it allows you to complete some tasks
+      with a simple one line command instead of using the ``pumping'' motion of
+      the mouse!
+
+    Once your docker installation is complete, please locate a terminal window
+    on your machine. In MacOS and Linux, you can search for a ``terminal'' and
+    on Windows machines look for ``cmd'' (command prompt). If you are using
+    Windows, we recommend using a Linux-based terminal, a step that you will
+    complete when installing Git in Section 2, step 2.
+
+    Now in the terminal window type {\tt docker run hello-world} command and
+    press ``Enter''. If you see an output similar to the one below, feel free to
+    high five a technical leader - your docker set up was successful!
+
+\end{enumerate}
+
+\begin{verbatim}
+docker run hello-world
+
+docker : Unable to find image 'hello-world:latest' locally
+...
+
+latest:
+Pulling from library/hello-world
+ca4f61b1923c:
+Pulling fs layer
+ca4f61b1923c:
+Download complete
+ca4f61b1923c:
+Pull complete
+Digest: sha256:97ce6fa4b6cdc0790cda65fe7290b74cfebd9fa0c9b8c38e979330d547d22ce1
+Status: Downloaded newer image for hello-world:latest
+
+Hello from Docker!
+This message shows that your installation appears to be working correctly.
+...
+\end{verbatim}
+
 \section*{Summary of the Required Deliverables}
 
 \noindent Students do not need to submit printed source code or technical

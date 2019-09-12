@@ -253,7 +253,7 @@ account on GitHub and you can already use your laptop to finish assignments.
     default? Do you have any questions about completing this step?
 
   \item Once you have created your SSH keys, you should raise your hand to
-    invite either a teaching assistant or the course instructor to help you with
+    invite either a technical leader or the course instructor to help you with
     the next steps. First, you must log into GitHub and look in the right corner
     for an account avatar with a down arrow. Click on this link and then select
     the ``Settings'' option. Now, scroll down until you find the ``SSH and GPG
@@ -328,10 +328,10 @@ discoveries with a neighbor and a \mbox{teaching assistant}.
 \section*{Enhancing and Testing a Java Program}
 
 In order view the source code of a Java program or a Markdown-based writing
-assignment, you need a text editor. There are many different text editors on
-your workstation and you should feel free to explore them on your own. For
-instance, you may adopt either the GVim or the Atom text editor to complete this
-laboratory assignment. Please study the source code of the \mainprogram,
+assignment, you need a text editor. There are many different text editors that
+are available and you should feel free to explore them on your own. For
+instance, you may adopt either the VS Code or the Atom text editor to complete
+this laboratory assignment. Please study the source code of the \mainprogram,
 noticing that some of its methods are incomplete. You can refer to the Code
 Fragments in the textbook to discover the missing source code and add it back
 into the program. Next, you should also notice that the \mainprogram{} has a
@@ -340,6 +340,43 @@ please refer to Section 1.9 and the comments in the source code of this test
 suite to learn more about how it works. Intuitively, a JUnit test suite has
 individual test cases, written as Java methods, that each work to establish a
 confidence in the correctness of \mainprogram{}.
+
+% Introduce the use of Docker and the use of Gradle inside of Docker
+
+Once you have installed Docker Desktop, you can use the following
+\command{docker run} command to start \command{gradle grade} as a containerized
+application, using the ``DockaGator'' Docker image available on DockerHub. You
+can run the following command to run the \command{gradle grade} on your project:
+
+\begin{verbatim}
+docker run --rm --name dockagator \
+  -v "$(pwd)":/project \
+  -v "$HOME/.dockagator":/root/.local/share \
+  gatoreducator/dockagator
+\end{verbatim}
+
+The aforementioned command will use \program{"\$(pwd)"} (i.e., the current
+directory) as the project directory and \program{"\$HOME/.dockagator"} as the
+cached GatorGrader directory. Please note that both of these directories must
+exist, although only the project directory must contain some content. Generally,
+the project directory should contain the source code and technical writing for
+this assignment, as provided to you through GitHub during the completion of a
+previous step. Additionally, the cache directory should not contain anything
+other than directories and programs created by DockaGator, thus ensuring that
+they are not otherwise overwritten during the completion of the assignment. To
+ensure that the previous command will work correctly, you should create the
+cache directory by running the command \command{mkdir \$HOME/.dockagator}; you
+will only need to do this once. If the above \command{docker run} command does
+not work correctly on the Windows operating system, then you may need to instead
+run the following command to work around limitations in the terminal window:
+
+\begin{verbatim}
+docker run --rm --name dockagator \
+  -v "$(pwd):/project" \
+  -v "$HOME/.dockagator:/root/.local/share" \
+  gatoreducator/dockagator
+\end{verbatim}
+
 
 Now, if you want to \step{build} your program you can type the command
 \gradlebuild{} in your terminal, thereby causing the Java compiler to check your
@@ -448,8 +485,9 @@ to submit, using GitHub, the following deliverables.
 
   \setlength{\itemsep}{0in}
 
-\item Stored in a Markdown file called \reflection{}, a one-paragraph response,
-  each consisting of at least 100 words, for each of the following questions.
+\item Stored in a Markdown file called \reflection{}, a multiple-paragraph
+  response, each consisting of an adequate number words, for each prompt and
+  questions, like those below.
 
   \vspace*{-.1in}
 
@@ -493,14 +531,12 @@ your submitted deliverables. Your grade for the assignment will be a function of
 the whether or not it was submitted in a timely fashion and if your program
 received a green \checkmark{} indicating that it met all of the requirements.
 Other factors will also influence your final grade on the assignment. In
-addition to studying the efficiency and effectiveness of your Java source code,
-the instructor will also evaluate the accuracy of both your technical writing
-and the comments in your source code. If your submission receives a red
-\naughtmark{}, the instructor will reduce your grade for the assignment while
-still considering the regularity with which you committed to your GitHub
-repository and the overall quality of your partially completed work. Please see
-the instructor if you have questions about the evaluation of this laboratory
-assignment.
+addition to studying the efficiency and effectiveness and documentation of your
+Java source code, the instructor will also evaluate the correctness of your
+technical writing. If your submission receives a red \naughtmark{}, the
+instructor will reduce your grade for the assignment. Finally, please remember
+to read your GitHub repository's \program{README.md} file for a description of
+the four grades that you will receive for this laboratory assignment.
 
 \section*{Adhering to the Honor Code}
 

@@ -343,17 +343,21 @@ confidence in the correctness of \mainprogram{}.
 
 % Introduce the use of Docker and the use of Gradle inside of Docker
 
-Once you have installed Docker Desktop, you can use the following
-\command{docker run} command to start \command{gradle grade} as a containerized
-application, using the ``DockaGator'' Docker image available on DockerHub. You
-can run the following command to run the \command{gradle grade} on your project:
+The instructor will provide to you the necessary software development tools
+through a Docker container. Once you have installed Docker Desktop, you can use
+the following \command{docker run} command to start \command{gradle grade} as a
+containerized application, using the ``DockaGator'' Docker image available on
+DockerHub. You can run this command to run the \command{gradle grade} on your
+project:
 
+\vspace*{-.1in}
 \begin{verbatim}
 docker run --rm --name dockagator \
   -v "$(pwd)":/project \
   -v "$HOME/.dockagator":/root/.local/share \
   gatoreducator/dockagator
 \end{verbatim}
+\vspace*{-.05in}
 
 The aforementioned command will use \program{"\$(pwd)"} (i.e., the current
 directory) as the project directory and \program{"\$HOME/.dockagator"} as the
@@ -370,26 +374,29 @@ will only need to do this once. If the above \command{docker run} command does
 not work correctly on the Windows operating system, then you may need to instead
 run the following command to work around limitations in the terminal window:
 
+\vspace*{-.1in}
 \begin{verbatim}
 docker run --rm --name dockagator \
   -v "$(pwd):/project" \
   -v "$HOME/.dockagator:/root/.local/share" \
   gatoreducator/dockagator
 \end{verbatim}
+\vspace*{-.05in}
 
-
-Now, if you want to \step{build} your program you can type the command
-\gradlebuild{} in your terminal, thereby causing the Java compiler to check your
-program for errors and get it ready to run. If you get any error messages, go
-back to your text editor and figure out what you mis-typed and fix it. Once you
-have solved the problem, make a note of the error and the solution for resolving
-it. Re-save your program and then build it again by re-running the
-\gradlebuild{}. If you cannot build \mainprogram{} correctly, then please talk
-with a teaching assistant or the instructor. You can also run the test suite for
-the \mainprogram{} by typing \gradletest{} in the terminal. What is the purpose
-of each of these test cases? What output do you see from running the test suite?
-Does this output suggest that the program is likely to produce the correct
-output? How did you know?
+By adding \command{-it} before \command{--rm} and \command{/bin/bash} after
+\command{gatoreducator/dockagator} you can enter into an interactive terminal
+window in the Docker container. Now, if you want to \step{build} your program
+you can type the command \gradlebuild{} in your terminal, thereby causing the
+Java compiler to check your program for errors and get it ready to run. If you
+get any error messages, go back to your text editor and figure out what you
+mis-typed and fix it. Once you have solved the problem, make a note of the error
+and the solution for resolving it. Re-save your program and then build it again
+by re-running the \gradlebuild{}. If you cannot build \mainprogram{} in a Docker
+container, then please talk with a technical leader or the instructor. You can
+also run the test suite for the \mainprogram{} by typing \gradletest{} in the
+terminal. What is the purpose of each of these test cases? What output do you
+see from running the test suite? Does this output suggest that the program is
+likely to produce the correct output? How did you know?
 
 Once you resolve all of the building and testing errors, you can run your
 program by typing \gradlerun{} in the terminal window---this is the ``execute''
@@ -410,7 +417,7 @@ Since this is our first laboratory assignment and you are still learning how to
 use the appropriate hardware and software, don't become frustrated if you make a
 mistake. Instead, use your mistakes as an opportunity for learning both about
 the necessary technology and the background and expertise of the other students
-in the class, the teaching assistants, and the course instructor.
+in the class, the technical leaders, and the course instructor.
 
 \section*{Checking the Correctness of Your Program and Writing}
 
@@ -446,7 +453,7 @@ and \gitpush{} commands. For example, if you want to signal that the
 you would first type \gitcommitmainprogram{} in your terminal, followed by
 typing \gitpush{} and checking to see that the transfer to GitHub is successful.
 If you notice that transferring your code or writing to GitHub did not work
-correctly, then please try to determine why, asking a teaching assistant or the
+correctly, then please try to determine why, asking a technical leader or the
 course instructor for assistance, if necessary.
 
 After the course instructor enables \step{continuous integration} with a system

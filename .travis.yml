@@ -6,6 +6,7 @@ script:
 - mkdir _build
 - latexmk -pdf -outdir=_build lab01/cs101F2019_lab01.tex
 - latexmk -pdf -outdir=_build practical01/cs101F2019_practical01.tex
+- latexmk -pdf -outdir=_build practical02/cs101F2019_practical02.tex
 deploy:
   provider: releases
   api_key:
@@ -13,6 +14,7 @@ deploy:
   file:
     - _build/cs101F2019_lab01.pdf
     - _build/cs101F2019_practical01.pdf
+    - _build/cs101F2019_practical02.pdf
   skip_cleanup: true
   on:
     tags: true

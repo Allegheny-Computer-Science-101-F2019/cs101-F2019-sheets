@@ -231,15 +231,24 @@ discoveries with a neighbor and a \mbox{teaching assistant}.
 
 \section*{Creating and Testing a Java Program that Swaps}
 
-In order view the source code of a Java program or a Markdown-based writing
-assignment, you need a text editor. There are many different text editors on
-your workstation and you should feel free to explore these on your own. For
-instance, you may adopt either the GVim or the Atom text editor to complete this
-practical assignment. Please study the source code of the \mainprogram~program,
-noticing that one of its methods is incomplete. Specifically, you will notice
-that the program is missing an implementation of the \program{swap} method. Can you
-add in a full implementation of this method? Why do you think that the
-\program{swap} method accepts parameters of type \program{AtomicInteger}?
+% In order view the source code of a Java program or a Markdown-based writing
+% assignment, you need a text editor. There are many different text editors on
+% your workstation and you should feel free to explore these on your own. For
+% instance, you may adopt either the GVim or the Atom text editor to complete this
+% practical assignment.
+
+The instructor will provide you with the necessary software development tools
+through a Docker container. Once you have installed Docker Desktop, you can use
+a \command{docker run} command to start \command{gradle grade} as a
+containerized application, using the ``DockaGator'' Docker image available on
+DockerHub.
+%
+Before you start to build and test your program, please study the source code of
+the \mainprogram~program, noticing that one of its methods is incomplete.
+Specifically, you will notice that the program is missing an implementation of
+the \program{swap} method. Can you add in a full implementation of this method?
+Why do you think that the \program{swap} method accepts parameters of type
+\program{AtomicInteger}?
 
 Next, you should also notice that the \mainprogram{} has a test suite called
 \testprogram{} that is written in the JUnit testing framework; please refer to
@@ -247,8 +256,8 @@ Section 1.9 and the comment's in the source code of this test suite to learn
 more about how it works. Intuitively, a JUnit test suite has individual test
 cases, written as Java methods, that each work to establish a confidence in the
 correctness of \mainprogram{}. First, please note that this test suite initially
-passes even though the program is incorrect. Why? Finally, you should add a new
-test case to this suite. What type of test is most needed?
+passes even though the program is incorrect. Why? Finally, you should add at
+least two new test cases to this suite. What type of tests are most needed?
 
 Now, if you want to \step{build} your program you can type the command
 \gradlebuild{} in your terminal, thereby causing the Java compiler to check your

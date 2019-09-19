@@ -160,14 +160,14 @@ project.
   give you the opportunity to learn both fundamental concepts in the field of
   computer science and explore advanced technologies that are commonly employed
   at a wide variety of companies. To explore and develop new ideas, you should
-  regularly communicate with your team and/or the technical leaders and tutors.
+  regularly communicate with your team and/or the technical leaders.
 
 \item {\bf Hone your technical writing skills}. Computer science assignments
   require to you write technical documentation and descriptions of your
   experiences when completing each task. Take extra care to ensure that your
   writing is interesting and both grammatically and technically correct,
   remembering that computer scientists must effectively communicate and
-  collaborate with their team members and the tutors, technical leaders, and
+  collaborate with their team members and the student technical leaders and
   course instructor.
 
 \item {\bf Review the Honor Code on the syllabus}. While you may discuss your
@@ -254,9 +254,9 @@ is missing several necessary methods (e.g., a constructor for the
 \program{readSentencesFromFile}). You should add these methods to the program,
 including test cases whenever it will help you to establish a confidence in the
 correctness of your implementation. If you want to \step{build} your program you
-can type the command \gradlebuild{} in your terminal, thereby causing the Java
-compiler to check your program for errors and get it ready to run. If you get
-any error messages, go back to your text editor and figure out what you
+can type the command \gradlebuild{} in a Docker container, thereby causing the
+Java compiler to check your program for errors and get it ready to run. If you
+get any error messages, go back to your text editor and figure out what you
 mis-typed and fix it. Once you have solved the problem, make a note of the error
 and the solution for resolving it. Re-save your program and then build it again
 by re-running the \gradlebuild{}. If you cannot build \mainprogram{} correctly,
@@ -276,11 +276,11 @@ this process. What step did you find to be the most challenging? Why? You should
 write your reflections in a file, called \reflection{}, that uses the Markdown
 writing language. You can learn more about Markdown by viewing the
 aforementioned GitHub guide. To complete this aspect of the assignment, you
-should write one high-quality paragraph that reports on your experiences. Your
+should write high-quality paragraphs that report on your experiences. Your
 \reflection{} should also contain answers to other questions about
 \mainprogram{}'s implementation and testing. Finally, please search for the
 following segments in the provided source code and make sure that you can
-explain their role in the implementation of the overall \mainprogram.
+explain their role in the implementation of the overall \mainprogram{} program.
 
 \begin{itemize}
 
@@ -350,17 +350,17 @@ instance, Gradle will run the provided tests and GatorGrader will check to
 ensure that \mainprogram{} produces twenty-six lines of output and that you
 commit to GitHub a sufficient number of times during this assignment.
 
-To get started with the use of GatorGrader, type the command
-\gatorgraderstart{} in your terminal window. If your laboratory work does not
-meet all of the assignment's requirements, then you will see a summary of the
-failing checks along with a statement giving the percentage of checks that are
-currently passing. If you do have mistakes in your assignment, then you will
-need to review GatorGrader's output, find the mistake, and try to fix it,
-consulting your text book and course notes as needed. Once your program is
-building correctly, fulfilling at least some of the assignment's requirements,
-you should transfer your files to GitHub using the \gitcommit{} and \gitpush{}
-commands. For example, if you want to signal that the \mainprogramsource{} file
-has been changed and is ready for transfer to GitHub you would first type
+To get started with the use of GatorGrader, type the command \gatorgraderstart{}
+in your Docker container. If your laboratory work does not meet all of the
+assignment's requirements, then you will see a summary of the failing checks
+along with a statement giving the percentage of checks that are currently
+passing. If you do have mistakes in your assignment, then you will need to
+review GatorGrader's output, find the mistake, and try to fix it, consulting
+your text book and course notes as needed. Once your program is building
+correctly, fulfilling at least some of the assignment's requirements, you should
+transfer your files to GitHub using the \gitcommit{} and \gitpush{} commands.
+For example, if you want to signal that the \mainprogramsource{} file has been
+changed and is ready for transfer to GitHub you would first type
 \gitcommitmainprogram{} in your terminal, followed by typing \gitpush{} and
 checking to see that the transfer to GitHub is successful.
 

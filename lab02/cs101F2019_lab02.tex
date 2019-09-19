@@ -229,7 +229,7 @@ location, then you can type the command \command{cd ..}. Please continue to use
 the \command{cd} and \command{ls} commands to explore the files that you
 automatically downloaded from GitHub. What files and directories do you see?
 What do you think is their purpose? Spend some time exploring, sharing your
-discoveries with a neighbor and a \mbox{teaching assistant}.
+discoveries with a neighbor and a \mbox{student technical leader}.
 
 \section*{Implementing and Testing a Sentences Reversing Program}
 
@@ -278,7 +278,19 @@ writing language. You can learn more about Markdown by viewing the
 aforementioned GitHub guide. To complete this aspect of the assignment, you
 should write one high-quality paragraph that reports on your experiences. Your
 \reflection{} should also contain answers to other questions about
-\mainprogram{}'s implementation and testing.
+\mainprogram{}'s implementation and testing. Finally, please search for the
+following segments in the provided source code and make sure that you can
+explain their role in the implementation of the overall \mainprogram.
+
+\begin{itemize}
+
+  \item \program{private static int nextId = 0;}
+  \item \program{this.sentence = sentence;}
+  \item \program{private Sentence[] sentences;}
+  \item \program{currentSentence = (currentSentence + 1)  \% NUMBER\_OF\_SENTENCES;}
+  \item \program{sentences.reverseSentences();}
+
+\end{itemize}
 
 \begin{figure}[t]
   \centering

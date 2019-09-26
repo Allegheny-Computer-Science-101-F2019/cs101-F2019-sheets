@@ -133,63 +133,45 @@ project.
 \begin{itemize}
   \setlength{\itemsep}{0pt}
 
-\item {\bf Use the laboratory computers}. The computers in this laboratory
-  feature specialized software for completing this course's laboratory and
-  practical assignments. If it is necessary for you to work on a different
-  machine, be sure to regularly transfer your work to a laboratory machine so
-  that you can check its correctness. If you cannot use a laboratory computer
-  and you need help with the configuration of your own laptop, then please
-  carefully explain its setup to a teaching assistant or the course instructor
-  when you are asking questions.
-
 \item {\bf Follow each step carefully}. Slowly read each sentence in the
   assignment sheet, making sure that you precisely follow each instruction. Take
   notes about each step that you attempt, recording your questions and ideas and
-  the challenges that you faced. If you are stuck, then please tell a teaching
-  assistant or instructor what assignment step you recently completed.
+  the challenges that you faced. If you are stuck, then please tell a technical
+  leader or instructor what assignment step you recently completed.
 
 \item {\bf Regularly ask and answer questions}. Please log into Slack at the
   start of a laboratory or practical session and then join the appropriate
   channel. If you have a question about one of the steps in an assignment, then
   you can post it to the designated channel. Or, you can ask a student sitting
-  next to you or talk with a teaching assistant or the course instructor.
+  next to you or talk with a technical leader or the course instructor.
 
-\item {\bf Store your files in GitHub}. As in previous laboratory assignments,
-  you will be responsible for storing all of your files (e.g., Java source code
-  and Markdown-based writing) in a Git repository using GitHub Classroom. Please
-  verify that you have saved your source code in your Git repository by using
-  \command{git status} to ensure that everything is updated. You can see if your
-  assignment submission meets the established correctness requirements by using
-  the provided checking tools on your local computer and in checking the commits
-  in GitHub.
+\item {\bf Store your files in GitHub}. Starting with this laboratory
+  assignment, you will be responsible for storing all of your files (e.g., Java
+  source code and Markdown-based writing) in a Git repository using GitHub
+  Classroom. Please verify that you have saved your source code in your Git
+  repository by using \command{git status} to ensure that everything is updated.
+  You can see if your assignment submission meets the established correctness
+  requirements by using the provided checking tools on your local computer and
+  in checking the commits in GitHub.
 
 \item {\bf Keep all of your files}. Don't delete your programs, output files,
   and written reports after you submit them through GitHub; you will need them
   again when you study for the quizzes and examinations and work on the other
   laboratory, practical, and final project assignments.
 
-\item {\bf Back up your files regularly}. All of your files are regularly
-  backed-up to the servers in the Department of Computer Science and, if you
-  commit your files regularly, stored on GitHub. However, you may want to use a
-  flash drive, Google Drive, or your favorite backup method to keep an extra
-  copy of your files on reserve. In the event of any type of system failure, you
-  are responsible for ensuring that you have access to a recent backup copy of
-  all your files.
-
 \item {\bf Explore teamwork and technologies}. While certain aspects of the
   laboratory assignments will be challenging for you, each part is designed to
   give you the opportunity to learn both fundamental concepts in the field of
   computer science and explore advanced technologies that are commonly employed
   at a wide variety of companies. To explore and develop new ideas, you should
-  regularly communicate with your team and/or the teaching assistants and
-  tutors.
+  regularly communicate with your team and/or the technical leaders.
 
 \item {\bf Hone your technical writing skills}. Computer science assignments
   require to you write technical documentation and descriptions of your
   experiences when completing each task. Take extra care to ensure that your
   writing is interesting and both grammatically and technically correct,
   remembering that computer scientists must effectively communicate and
-  collaborate with their team members and the tutors, teaching assistants, and
+  collaborate with their team members and the student technical leaders and
   course instructor.
 
 \item {\bf Review the Honor Code on the syllabus}. While you may discuss your
@@ -251,12 +233,9 @@ location, then you can type the command \command{cd ..}. Please continue to use
 the \command{cd} and \command{ls} commands to explore the files that you
 automatically downloaded from GitHub. What files and directories do you see?
 What do you think is their purpose? Spend some time exploring, sharing your
-discoveries with a neighbor and a \mbox{teaching assistant}.
+discoveries with a neighbor and a \mbox{technical leader}.
 
 \section*{Implementing and Testing a Generic Array Reversal Program}
-
-% Next, you will need to add a test case to \testprogram{} that ensures that the
-% program correctly performs a reversal for \program{Integer[]} arrays.
 
 Please use a text editor to study the source code of the \mainprogram{} class,
 noticing that some of its methods are incomplete. Now, can you draw a picture
@@ -277,30 +256,47 @@ this method? Why do you think that this reversal method is declared to be
 Figure~\ref{fig:output}.
 
 If you want to \step{build} your program you can type the command \gradlebuild{}
-in your terminal, thereby causing the Java compiler to check your program for
-errors and get it ready to run. Please note that when you first try to build the
-program you will see the following message in your terminal window. What is the
-meaning of this message? What does it tell you about the program?
+in your Docker container, thereby causing the Java compiler to check your
+program for errors and get it ready to run. Please note that when you first try
+to build the program you will see the following messages in your terminal
+window. What is the meaning of these messages? What does they tell you about the
+correctness of the program? Where do they suggest that you should start working
+on this assignment? In this output what is the meaning of the notation
+\command{TestReverser.java:26}?
 
 \vspace*{-.075in}
 \begin{verbatim}
-Exception in thread "main" java.lang.NullPointerException
-        at labthree.Reverser.main(Reverser.java:46)
+  labthree.TestReverser > testSentenceReversalWithOneSentence FAILED
+      java.lang.AssertionError at TestReverser.java:26
+  labthree.TestReverser > testSentenceReversalWithOneInteger FAILED
+      java.lang.AssertionError at TestReverser.java:33
+  labthree.TestReverser > testSentenceReversalWithTwoIntegers FAILED
+      java.lang.NullPointerException at TestReverser.java:41
+  labthree.TestReverser > testSentenceReversalWithTwoSentences FAILED
+      java.lang.NullPointerException at TestReverser.java:50
+  labthree.TestReverser > testSentenceReversalWithManySentences FAILED
+      java.lang.NullPointerException at TestReverser.java:62
+  labthree.TestReverser > testIntegerReversalWithManyIntegers FAILED
+      java.lang.NullPointerException at TestReverser.java:74
+  labthree.TestSentence > testFirstSentenceHasCorrectSentence PASSED
+  labthree.TestSentence > testTwoSentencesHaveCorrectIdentifiers PASSED
+  labthree.TestSentence > testFirstSentenceHasFirstIdentifier PASSED
 \end{verbatim}
 \vspace*{-.075in}
 
 Please note that once you implement the required methods correctly, the program
-will not produce this error message when executed. If you get any further error
-messages, go back to your text editor and figure out what you mis-typed and fix
-it. Once you have solved the problem, make a note of the error and the solution
-for resolving it. If you cannot build \mainprogram{} correctly, then please talk
-with the course instructor. Remember, you can run the tests for the classes in
-\mainprogram{} by typing \gradletest{} in the terminal. Again, please make sure
-that you understand the purpose of each of these test cases and that you
-consider adding more test cases. You should incrementally complete this
-assignment, making small changes and regularly committing your code and writing.
+will not produce these error messages during testing. As you try to fix these
+error messages, go back to your text editor and figure out how the program is
+incorrect and then fix it. Once you have solved the problem, make a note of the
+error and the solution for resolving it. Remember, you can run the tests for the
+classes in \mainprogram{} by typing \gradletest{} in the Docker container.
+Again, please make sure that you understand the purpose of each of these test
+cases and that you consider adding more test cases. You should incrementally
+complete this assignment, making small changes and regularly saving and
+committing the Java source code and Markdown-based technical writing.
 
-% You can learn more about Markdown by viewing the aforementioned GitHub guide.
+% If you cannot build \mainprogram{} correctly, then please talk with the course
+% instructor or a student technical leader.
 
 Once you resolve all of the building and testing errors, you can run your
 program by typing \gradlerun{} in the terminal window---this is the ``execute''
@@ -312,9 +308,9 @@ then repair the program and re-build and re-run it. Once the program runs,
 please reflect on this process. What step did you find to be the most
 challenging? Why? You should write your reflections in a file, called
 \reflection{}, that uses the Markdown writing language. To complete this aspect
-of the assignment, you should write one high-quality paragraph that reports on
-your experiences. Your \reflection{} file should also contain answers to other
-questions about \mainprogram{}'s implementation and testing.
+of the assignment, you should write multiple high-quality paragraphs that report
+on your experiences. Your \reflection{} file should also contain answers to
+other questions about \mainprogram{}'s implementation and testing.
 
 \begin{figure}[t]
   \centering
@@ -385,23 +381,6 @@ has been changed and is ready for transfer to GitHub you would first type
 \gitcommitmainprogram{} in your terminal, followed by typing \gitpush{} and
 checking to see that the transfer to GitHub is successful.
 
-% To get started with the use of GatorGrader, type the command
-% \gatorgraderstart{} in your terminal window. Once this step completes you can
-% type \gatorgradercheck{}. If your work does not meet all of the assignment's
-% requirements, then you will see the following output in your terminal:
-% \command{Overall, are there any mistakes in the assignment? Yes}. If you do
-% have mistakes in your assignment, then you will need to review GatorGrader's
-% output, find the mistake, and try to fix it. Once your program is building
-% correctly, fulfilling at least some of the assignment's requirements, you
-% should transfer your files to GitHub using the \gitcommit{} and \gitpush{}
-% commands. For example, if you want to signal that the \mainprogramsource{}
-% file has been changed and is ready for transfer to GitHub you would first type
-% \gitcommitmainprogram{} in your terminal, followed by typing \gitpush{} and
-% checking to see that the transfer to GitHub is successful. If you notice that
-% transferring your code or writing to GitHub did not work correctly, then
-% please try to determine why, asking a teaching assistant or the course
-% instructor for assistance, if necessary.
-
 After the course instructor enables \step{continuous integration} with a system
 called Travis CI, when you use the \gitpush{} command to transfer your source
 code to your GitHub repository, Travis CI will initialize a \step{build} of your
@@ -420,15 +399,14 @@ extenuating circumstances that you are facing, no late work will be considered
 towards your grade for this laboratory assignment.
 
 Remember that if you are completing this laboratory assignment on your own
-laptop the GatorGrader program will only run correctly if you have installed all
-of the programs on which it depends. You can see these dependencies (i.e.,
-Gradle, Java, Markdownlint, Proselint, and Python) by reading the documentation
-in your GitHub repository for this assignment. Note that assignment checking
-will still work with Travis CI even if you do not have these programs installed
-on your laptop.
-
-% Please see the instructor or teaching assistant if you have
-% trouble installing these programs.
+laptop the GatorGrader program will only run correctly if you run it in a Docker
+container.
+%
+Note that assignment checking will still work with Travis CI even if you do not
+have Docker Desktop installed on your laptop.
+%
+Please talk with a technical leader or the instructor if you cannot use Docker
+Desktop.
 
 \section*{Summary of the Required Deliverables}
 
@@ -463,14 +441,12 @@ your submitted deliverables. Your grade for the assignment will be a function of
 the whether or not it was submitted in a timely fashion and if your program
 received a green \checkmark{} indicating that it met all of the requirements.
 Other factors will also influence your final grade on the assignment. In
-addition to studying the efficiency and effectiveness of your Java source code,
-the instructor will also evaluate the accuracy of both your technical writing
-and the comments in your source code. If your submission receives a red
-\naughtmark{}, the instructor will reduce your grade for the assignment while
-still considering the regularity with which you committed to your GitHub
-repository and the overall quality of your partially completed work. Please see
-the instructor if you have questions about the evaluation of this laboratory
-assignment.
+addition to studying the efficiency and effectiveness and documentation of your
+Java source code, the instructor will also evaluate the correctness of your
+technical writing. If your submission receives a red \naughtmark{}, the
+instructor will reduce your grade for the assignment. Finally, please remember
+to read your GitHub repository's \program{README.md} file for a description of
+the four grades that you will receive for this laboratory assignment.
 
 \section*{Adhering to the Honor Code}
 

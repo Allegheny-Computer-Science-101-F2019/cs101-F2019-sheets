@@ -299,7 +299,7 @@ committing the Java source code and Markdown-based technical writing.
 % instructor or a student technical leader.
 
 Once you resolve all of the building and testing errors, you can run your
-program by typing \gradlerun{} in the terminal window---this is the ``execute''
+program by typing \gradlerun{} in the Docker container---this is the ``execute''
 step that will run your program and produce the designated output. You can see
 if your program is producing the desired output by looking at
 Figure~\ref{fig:output}. Do you see that it produces \mainprogramoutput{} lines
@@ -367,17 +367,17 @@ will run the provided JUnit tests, check to ensure that \mainprogram{} produces
 \mainprogramoutput{} lines of output, and see that you commit to GitHub a
 sufficient number of times when completing this assignment.
 
-To get started with the use of GatorGrader, type the command
-\gatorgraderstart{} in your terminal window. If your laboratory work does not
-meet all of the assignment's requirements, then you will see a summary of the
-failing checks along with a statement giving the percentage of checks that are
-currently passing. If you do have mistakes in your assignment, then you will
-need to review GatorGrader's output, find the mistake, and try to fix it,
-consulting your text book and course notes as needed. Once your program is
-building correctly, fulfilling at least some of the assignment's requirements,
-you should transfer your files to GitHub using the \gitcommit{} and \gitpush{}
-commands. For example, if you want to signal that the \mainprogramsource{} file
-has been changed and is ready for transfer to GitHub you would first type
+To get started with the use of GatorGrader, type the command \gatorgraderstart{}
+in your Docker container. If your laboratory work does not meet all of the
+assignment's requirements, then you will see a summary of the failing checks
+along with a statement giving the percentage of checks that are currently
+passing. If you do have mistakes in your assignment, then you will need to
+review GatorGrader's output, find the mistake, and try to fix it, consulting
+your text book and course notes as needed. Once your program is building
+correctly, fulfilling at least some of the assignment's requirements, you should
+transfer your files to GitHub using the \gitcommit{} and \gitpush{} commands.
+For example, if you want to signal that the \mainprogramsource{} file has been
+changed and is ready for transfer to GitHub you would first type
 \gitcommitmainprogram{} in your terminal, followed by typing \gitpush{} and
 checking to see that the transfer to GitHub is successful.
 
@@ -419,8 +419,9 @@ to submit, using GitHub, the following deliverables.
 
   \setlength{\itemsep}{0in}
 
-\item Stored in a Markdown file called \reflection{}, a one-paragraph response,
-  each consisting of at least 100 words, for each of the stated questions.
+\item Stored in a Markdown file called \reflection{}, a multiple-paragraph
+  response containing the requested Java source code explanations and the fenced
+  code blocks.
 
 \item A properly documented, well-formatted, and correct version of
   \mainprogramsource{} that meets all of the established requirements and

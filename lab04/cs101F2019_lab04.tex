@@ -231,7 +231,7 @@ location, then you can type the command \command{cd ..}. Please continue to use
 the \command{cd} and \command{ls} commands to explore the files that you
 automatically downloaded from GitHub. What files and directories do you see?
 What do you think is their purpose? Spend some time exploring, sharing your
-discoveries with a neighbor and a \mbox{teaching assistant}.
+discoveries with a neighbor and a \mbox{student technical leader}.
 
 \section*{Implementing and Testing an Array Sorting Program}
 
@@ -239,31 +239,30 @@ Please use a text editor to study the source code of the \mainprogram{} class,
 noticing that some of its methods are incomplete. Now, if you want to
 \step{build} your program you can type the command \gradlebuild{} in your
 terminal, thereby causing the Java compiler to check your program for errors and
-get it ready to run. At this point, you will notice that your program has
-compiler errors indicating that the source code in the \program{main} method of
-\mainprogram{} is not correct. So, you will need to correctly call the
-\program{InsertionSort.sort} method in \program{main}. However, once you ensure
-that the program correctly compiles, you will see that it does not produce the
-output in Figure~\ref{fig:output} and that many of the tests do not pass. What
-code is missing in the provided files?
-
+get it ready to run. However, once you ensure that the program correctly
+compiles, you will see that it does not produce the output in
+Figure~\ref{fig:output} and that many of the tests do not pass. What code is
+missing in the provided files?
+%
 Ultimately, you will need to implement source code in both of the Java files
 wherever you see the \command{TODO} label. For instance, the \testprogram{}
 requires you to implement two \program{isSorted} ``helper'' methods that
-determine if an array is sorted. Next, you must implement an
-\program{InsertionSort.sort} that follows the outline in Code Fragment 3.6 to
-sort an array of either type \program{int[]} or \program{char[]}. It is
-important to note that these methods should use the \program{System.arraycopy}
-method to construct a ``shallow copy'' of the array that is input to the
-\program{sort} method. Please refer to Section 3.6 and the referenced JavaDoc
-documentation to learn more about how this method works. You should also note
-that, at the outset, these sorting methods return the \program{source}
-variable---once you have implemented the sorting method for both data types you
-should change this to instead return the variable called \program{sorted}. As
-you complete this laboratory assignment, your goal is to proceed incrementally,
-adding the required code and then checking to see if an additional test passes.
-Once a new feature is working, please make sure that you commit your code with
-a descriptive message.
+determine if an array is sorted.
+
+Next, you must implement an \program{InsertionSort.sort} method that follows the
+outline in Code Fragment 3.6 to sort an array of either type \program{int[]} or
+\program{char[]}. It is important to note that these methods should use the
+\program{System.arraycopy} method to construct a ``shallow copy'' of the array
+that is input to the \program{sort} method. Please refer to Section 3.6 and the
+referenced JavaDoc documentation to learn more about how this method works.
+%
+Make sure that you understand how the use of a ``shallow copy'' would influence
+arrays containing either primitives or references in a different fashion!
+%
+As you complete this laboratory assignment, your goal is to proceed
+incrementally, adding the required code and then checking to see if an
+additional test case passes. Once a new Java method is working, please make sure
+that you commit the code to your repository with a descriptive message.
 
 Once the program runs and the tests pass, please reflect on this process. What
 step did you find to be the most challenging? Why? You should write your
@@ -323,23 +322,43 @@ has been changed and is ready for transfer to GitHub you would first type
 \gitcommitmainprogram{} in your terminal, followed by typing \gitpush{} and
 checking to see that the transfer to GitHub is successful.
 
+\begin{figure}[t]
+  \centering
+  \begin{verbatim}
+    labfour.TestInsertionSort > testisSortedCheckerWorksForSortedChar PASSED
+    labfour.TestInsertionSort > testisSortedCheckerWorksForUnSortedChar PASSED
+    labfour.TestInsertionSort > testisSortedCheckerWorksForSortedInt PASSED
+    labfour.TestInsertionSort > testisSortedCheckerWorksForUnSortedInt PASSED
+    labfour.TestInsertionSort > testInsertionSortWithChar PASSED
+    labfour.TestInsertionSort > testInsertionSortWithInt PASSED
+    labfour.TestInsertionSort > testInsertionSortWithManyOrderedInts PASSED
+    labfour.TestInsertionSort > testInsertionSortWithManyOrderedChar PASSED
+    labfour.TestInsertionSort > testInsertionSortWithManyReversedInts PASSED
+    labfour.TestInsertionSort > testInsertionSortWithManyReversedChars PASSED
+    labfour.TestInsertionSort > testInsertionSortWithManyRandomInts PASSED
+    labfour.TestInsertionSort > testInsertionSortWithManyRandomChars PASSED
+  \end{verbatim}
+  \vspace*{-.35in}
+  \caption{The Expected Output of the \testprogram{} Test Suite.}~\label{fig:test}
+  \vspace*{-.25in}
+\end{figure}
+
 After the course instructor enables \step{continuous integration} with a system
 called Travis CI, when you use the \gitpush{} command to transfer your source
-code to your GitHub repository, Travis CI will initialize a \step{build} of
-your assignment, checking to see if it meets all of the requirements. If both
-your source code and writing meet all of the established requirements, then you
-will see a green \checkmark{} in the listing of commits in GitHub after awhile.
-If your submission does not meet the requirements, a red \naughtmark{} will
-appear instead. The instructor will reduce a student's grade for this
-assignment if the red \naughtmark{} appears on the last commit in GitHub
-immediately before the assignment's due date. Yet, if the green \checkmark{}
-appears on the last commit in your GitHub repository, then you satisfied all of
-the main checks, thereby allowing the course instructor to evaluate other
-aspects of your source code and writing, as further described in the
-\step{Evaluation} section of this assignment sheet. Unless you provide the
-instructor with documentation of the extenuating circumstances that you are
-facing, no late work will be considered towards your grade for this laboratory
-assignment.
+code to your GitHub repository, Travis CI will initialize a \step{build} of your
+assignment, checking to see if it meets all of the requirements. If both your
+source code and writing meet all of the established requirements, then you will
+see a green \checkmark{} in the listing of commits in GitHub after awhile. If
+your submission does not meet the requirements, a red \naughtmark{} will appear
+instead. The instructor will reduce a student's grade for this assignment if the
+red \naughtmark{} appears on the last commit in GitHub immediately before the
+assignment's due date. Yet, if the green \checkmark{} appears on the last commit
+in your GitHub repository, then you satisfied all of the main checks, thereby
+allowing the course instructor to evaluate other aspects of your source code and
+writing, as further described in the \step{Evaluation} section of this
+assignment sheet. Unless you provide the instructor with documentation of the
+extenuating circumstances that you are facing, no late work will be considered
+towards your grade for this laboratory assignment.
 
 \section*{Summary of the Required Deliverables}
 
@@ -351,12 +370,16 @@ to submit, using GitHub, the following deliverables.
 
   \setlength{\itemsep}{0in}
 
-\item Stored in a Markdown file called \reflection{}, a one-paragraph response,
-  each consisting of at least three sentences, for each of the stated questions.
+\item Stored in a Markdown file called \reflection{}, a multiple-paragraph
+  response across the stated questions and fenced code blocks for the output of
+  the program and the test suite.
 
 \item A properly documented and correct version of the two Java source files
   (i.e., sorting methods and test suite) that meet all of the established
   requirements and produce the desired output.
+  %
+  Make sure that you add the source code that fully tests and performs arrays
+  sorting.
 
 \end{enumerate}
 
@@ -364,26 +387,28 @@ to submit, using GitHub, the following deliverables.
 
 Using a report that the instructor shares with you through the commit log in
 GitHub, you will privately received a grade on this assignment and feedback on
-your submitted deliverables. Your grade for the assignment will be a function
-of the whether or not it was submitted in a timely fashion and if your program
+your submitted deliverables. Your grade for the assignment will be a function of
+the whether or not it was submitted in a timely fashion and if your program
 received a green \checkmark{} indicating that it met all of the requirements.
 Other factors will also influence your final grade on the assignment. In
-addition to studying the efficiency and effectiveness of your Java source code,
-the instructor will also evaluate the accuracy of both your technical writing
-and the comments in your source code. If your submission receives a red
-\naughtmark{}, the instructor will reduce your grade for the assignment while
-still considering the regularity with which you committed to your GitHub
-repository and the overall quality of your partially completed work. Please see
-the instructor if you have questions about the evaluation of this laboratory
-assignment.
+addition to studying the efficiency and effectiveness and documentation of your
+Java source code, the instructor will also evaluate the correctness of your
+technical writing. If your submission receives a red \naughtmark{}, the
+instructor will reduce your grade for the assignment. Finally, please remember
+to read your GitHub repository's \program{README.md} file for a description of
+the four grades that you will receive for this laboratory assignment.
 
 % \section*{Adhering to the Honor Code}
 
-% In adherence to the Honor Code, students should complete this assignment on an individual basis. While it is appropriate
-% for students in this class to have high-level conversations about the assignment, it is necessary to distinguish
-% carefully between the student who discusses the principles underlying a problem with others and the student who produces
-% assignments that are identical to, or merely variations on, someone else's work. Deliverables (e.g., Java source code or
-% Markdown-based technical writing) that are nearly identical to the work of others will be taken as evidence of violating
-% the \mbox{Honor Code}. Please see the course instructor if you have questions about this policy.
+% In adherence to the Honor Code, students should complete this assignment on an
+% individual basis. While it is appropriate for students in this class to have
+% high-level conversations about the assignment, it is necessary to distinguish
+% carefully between the student who discusses the principles underlying a
+% problem with others and the student who produces assignments that are
+% identical to, or merely variations on, someone else's work. Deliverables
+% (e.g., Java source code or Markdown-based technical writing) that are nearly
+% identical to the work of others will be taken as evidence of violating the
+% \mbox{Honor Code}. Please see the course instructor if you have questions
+% about this policy.
 
 \end{document}

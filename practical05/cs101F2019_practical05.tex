@@ -98,7 +98,7 @@ descriptive commit message"}}
     \begin{center}
       \bf
       CMPSC 101\\Data Abstraction\\
-      Fall 2018\\
+      Fall 2019\\
       \medskip
     \end{center}
     \bf
@@ -118,7 +118,7 @@ To continue to practice using GitHub to access the files for a course
 assignment. Additionally, to review how to use your laptop's operating system
 and software development programs such as a ``terminal window'' and the ``text
 editor''. You will also continue to practice using Slack to support
-communication with the teaching assistants and the instructor. Next, you will
+communication with the technical leaders and the instructor. Next, you will
 learn how to use a test suite to guide the creation of a Java program that
 adheres to Google's style guide for programming in Java, also practicing how to
 use an automated grading tool to assess your progress.
@@ -175,7 +175,6 @@ use an automated grading tool to assess your progress.
 
 \end{itemize}
 
-
 \section*{Reading Assignment}
 
 If you have not done so already, please read all of the relevant ``GitHub
@@ -201,7 +200,7 @@ button and then click the link that is prefaced with the label ``Your
 assignment has been created here''. If you accepted the assignment and
 correctly followed these steps, you should have created a GitHub repository
 with a name like
-``Allegheny-Computer-Science-101-Fall-2018/computer-science-101-fall-2018-practical-4-gkapfham''.
+``Allegheny-Computer-Science-101-Fall-2019/computer-science-101-fall-2019-practical-4-gkapfham''.
 Unless you provide the instructor with documentation of the extenuating
 circumstances that you are facing, not accepting this practical assignment
 means that you automatically receive a failing grade for it.
@@ -213,14 +212,14 @@ and the output that your program must produce. Now you are ready to download the
 starting materials to your laboratory computer. Click the ``Clone or download''
 button and, after ensuring that you have selected ``Clone with SSH'', please
 copy this command to your clipboard. At this point, you can open a new terminal
-window and type the command \command{cd cs101F2018} to enter the course
+window and type the command \command{cd cs101F2019} to enter the course
 directory. Now type \command{git clone} in your terminal and paste in the string
 that you copied from the GitHub site to download this assignment's code. For
 instance, if the instructor ran the \command{git clone} command, it would look
 like:
 
 \begin{lstlisting}
-  git clone git@github.com:Allegheny-Computer-Science-101-F2018/computer-science-101-fall-2018-practical-4-gkapfham.git
+  git clone git@github.com:Allegheny-Computer-Science-101-F2019/computer-science-101-fall-2019-practical-4-gkapfham.git
 \end{lstlisting}
 
 After this command finishes, you can use \command{cd} to change into the new
@@ -229,7 +228,7 @@ location, then you can type the command \command{cd ..}. Please continue to use
 the \command{cd} and \command{ls} commands to explore the files that you
 automatically downloaded from GitHub. What files and directories do you see?
 What do you think is their purpose? Spend some time exploring, sharing your
-discoveries with a neighbor and a \mbox{teaching assistant}.
+discoveries with a neighbor and a \mbox{student technical leader}.
 
 \section*{Implementing a Java Program that Performs Cryptography}
 
@@ -241,10 +240,9 @@ Additionally, you should run the test suite called \testprogram{} that is
 written in the JUnit testing framework. Please read each of the tests as they
 explain, in Java source code, the expected behavior of a cryptography algorithm.
 You can run the test suite for the \mainprogram{} class by typing \gradletest{}
-in the terminal. Did you see that one of the test cases does not pass? Can you
-explain why the test might fail? You should also study the code of
-\testprogramsource{} and notice that two of the tests have not been implemented.
-Can you add the needed code?
+in the Docker container. Did you see that some of the test cases do not pass?
+Can you explain why a test might fail? Can you repair the program so that all of
+the test cases pass?
 
 \vspace*{-.125in}
 \begin{verbatim}
@@ -261,15 +259,34 @@ You should input the source code from Code Fragment 3.8 into the provided
 framework, following the \program{TODO} markers and adhering to the Google style
 guide for Java programming. Remember, if you want to \step{build} your program
 you can type the command \gradlebuild{} in your terminal, thereby causing the
-Java compiler to check your program for errors and get it ready to run. If you
-see any error messages, go back to your text editor and figure out what you
-mis-typed and fix it. You should keep revising the implementation of
+Java compiler to check your program for errors and get it ready to run. For your
+reference, here are the methods for performing encryption and decryption. Before
+continuing with the assignment, can you explain why they both call the same
+method with different parameters?
+
+\vspace*{-.125in}
+\begin{verbatim}
+  public String encrypt(String message) {
+    // use the encoder array
+    return transform(message, encoder);
+  }
+
+  public String decrypt(String secret) {
+    // use the decoder array
+    return transform(secret, decoder);
+  }
+\end{verbatim}
+\vspace*{-.125in}
+
+If you see any error messages, go back to your text editor and figure out what
+you mis-typed and fix it. You should keep revising the implementation of
 \mainprogram's methods until all of the tests pass. Then, you can use
 \gradlerun{} to see the program's output. If your cryptography algorithms work
 correctly you should see the following output in the terminal. How does this
 output suggests ways in which to improve the algorithms? Optionally, please
 consider how you could implement improvements to this program, thereby ensuring
-that it better handles numbers and punctuation.
+that it better handles numbers and punctuation. Finally, can you think of a way
+to change the program so that it is more maintainable?
 
 \vspace*{-.125in}
 \begin{verbatim}
@@ -292,7 +309,7 @@ Gradle will run the provided tests, while GatorGrader will check to ensure that
 \mainprogram{} produces exactly four lines of output and that you committed to
 GitHub a sufficient number of times when completing this assignment. To get
 started with the use of GatorGrader, type the command \gatorgraderstart{} in
-your terminal window. If you have mistakes in your assignment, then you will
+your Docker container. If you have mistakes in your assignment, then you will
 need to review GatorGrader's output, find the mistake, and try to fix it. Once
 your program is building correctly, fulfilling at least some of the assignment's
 requirements, you should transfer your files to GitHub using the \gitcommit{}
@@ -304,28 +321,28 @@ typing \gitpush{}.
 After the course instructor enables \step{continuous integration} with a system
 called Travis CI, when you use the \gitpush{} command to transfer your source
 code to your GitHub repository, Travis CI will initialize a \step{build} of your
-assignment, checking to see if it meets all of the requirements. If both your
-source code and writing meet all of the established requirements, then you will
-see a green \checkmark{} in the listing of commits in GitHub after awhile. If
-your submission does not meet the requirements, a red \naughtmark{} will appear
+assignment, checking to see if it meets all of the requirements. If your Java
+source code meets all of the established requirements, then you will see a green
+\checkmark{} in the listing of commits in GitHub after awhile. If your
+submission does not meet the requirements, a red \naughtmark{} will appear
 instead. The instructor will reduce a student's grade for this assignment if the
 red \naughtmark{} appears on the last commit in GitHub immediately before the
 assignment's due date. Yet, if the green \checkmark{} appears on the last commit
 in your GitHub repository, then you satisfied all of the main checks, thereby
 allowing the course instructor to evaluate other aspects of your source code and
-writing, as further described in the \step{Evaluation} section of this
+comments, as further described in the \step{Evaluation} section of this
 assignment sheet. Unless you provide the instructor with documentation of the
 extenuating circumstances that you are facing, no late work will be considered
 towards your grade for this practical assignment.
 
 Please note that if you are completing this practical assignment on your own
 laptop the GatorGrader program will only run correctly if you have installed all
-of the programs on which it depends. You can see these dependencies (i.e.,
-Gradle, Java, Markdownlint, Proselint, and Python) by reading the documentation
-in your GitHub repository for this assignment. Note that assignment checking
-will still work with Travis CI even if you do not have these programs installed
-on your laptop. Please see the instructor or teaching assistant if you have
-trouble installing these programs.
+of the programs on which it depends or if you use Docker. You can see these
+dependencies (i.e., Gradle, Java, Markdownlint, and Python) by reading the
+documentation in your GitHub repository for this assignment. Note that
+assignment checking will still work with Travis CI even if you do not have these
+programs installed on your laptop. Please see the instructor or technical leader
+if you have trouble installing these programs.
 
 \section*{Summary of the Required Deliverables}
 
@@ -352,23 +369,26 @@ Using a report that the instructor shares with you through the commit log in
 GitHub, you will privately received a grade on this assignment and feedback on
 your submitted deliverables. Your grade for the assignment will be a function of
 the whether or not it was submitted in a timely fashion and if your program
-received a green \checkmark{} indicating that it met all of the requirements.
-Other factors will also influence your final grade on the assignment. In
-addition to studying the efficiency and effectiveness of your Java source code,
-the instructor will also evaluate the accuracy of both your technical writing
-and the comments in your source code. If your submission receives a red
-\naughtmark{}, the instructor will reduce your grade for the assignment while
-still considering the regularity with which you committed to your GitHub
-repository and the overall quality of your partially completed work. Please see
-the instructor if you have questions about the evaluation of this laboratory
+received a green \checkmark{} indicating that it met all of the baseline
+requirements checked by GatorGrader.
+%
+Please remember to read your GitHub repository's \program{README.md} file for a
+description of the completion grade that you will receive for this practical
 assignment.
+%
+You can talk with the instructor if you have questions about the evaluation of
+this practical assignment.
+
+\section*{Adhering to the Honor Code}
 
 In adherence to the Honor Code, students should complete this assignment on an
 individual basis. While it is appropriate for students in this class to have
-high-level conversations about the assignment, it is necessary to distinguish
+high-level conversations about the assignment (concerning, for instance, the
+equation for the variance summary statistic), it is necessary to distinguish
 carefully between the student who discusses the principles underlying a
 technical problem with others and the student who produces assignment
 deliverables (e.g., source code) that are identical to, or merely variations on,
-someone else's work.
+someone else's work. Please talk with the course instructor if you are not sure
+how to abide by the Honor Code while completing this assignment.
 
 \end{document}

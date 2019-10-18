@@ -239,18 +239,19 @@ check your project diagram.
 \section*{Evaluating the Performance of String Concatenation}
 
 There are several \command{TODO} markers inside of the provided source code.
-Ultimately, it is your responsibility to read each of these and provide the
-required source code. With that said, the remainder of this section will provide
-some pointers to help you to implement the needed code. This assignment asks you
-to run experiments that produce output like that which Figure~\ref{fig:output}
-provides. Notably, this figure shows that there is a label for the name of the
-specific algorithm under study. As such, you should use the source code in Code
-Fragment 4.2 to provide an implementation of the source code needed for the
-\program{IterativeRepeater} and \program{AppendRepeater}. Please note that the
-\program{repeat1} and \program{repeat2} methods in this Code Fragment are not
-used in the provided source code because they are not descriptive enough. As
-such, you will need to ensure that you put the correct method in the correct
-class and, of course, adhere to Google's style guide for writing a Java program.
+Ultimately, it is your responsibility to read each of these and furnish the
+required Java source code. With that said, the remainder of this section will
+provide some pointers to help you to implement the needed code. This assignment
+asks you to run experiments that produce output like that which
+Figure~\ref{fig:output} provides. Notably, this figure shows that there is a
+label for the name of the specific algorithm under study. As such, you should
+use the source code in Code Fragment 4.2 to provide an implementation of the
+source code needed for the \program{IterativeRepeater} and
+\program{AppendRepeater}. Please note that the \program{repeat1} and
+\program{repeat2} method names in this Code Fragment are not used in the
+provided source code because they are not descriptive enough. As such, you will
+need to ensure that you put the correct method in the correct class and, of
+course, adhere to Google's style guide for writing a Java program.
 
 It is worth pointing out that your textbook contains several useful insights
 into the pattern that you should follow when thinking about the running time of
@@ -268,6 +269,20 @@ repeat2}? Do you have any questions about this thought process? Please talk with
 the course instructor if you do not understand the data table in
 Figure~\ref{fig:output}.
 
+It is worth emphasizing that the results from your experiments may not match
+those provided in Figure~\ref{fig:output}. Can you make a list of the reasons
+why the results from prior experiments may not match your results?
+%
+It is also possible that the results from your experiments may not suggest the
+correct worst-case time complexity. Again, can you make a list of the reasons
+why your theoretical understanding of the algorithm's performance may not match
+the likely worst-case time complexity suggested by your experiments?
+%
+Along with practicing programming in Java and using the necessary software tools
+to run experiments, as part of this assignment you should exercise the
+scientific strategies that you must use to collect, organize, and interpret data
+about algorithm performance.
+
 % Remember, if you want to \step{build} your program you can type the command
 % \gradlebuild{} in your terminal, thereby causing the Java compiler to check your
 % program for errors and get it ready to run. If you notice that some of the test
@@ -279,7 +294,6 @@ Figure~\ref{fig:output}.
 \begin{figure}[t]
   \centering
   \begin{verbatim}
-
 
   Results of an experiment campaign with IterativeRepeater:
 

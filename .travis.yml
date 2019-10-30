@@ -17,6 +17,7 @@ script:
 - latexmk -pdf -outdir=_build practical05/cs101F2019_practical05.tex
 - latexmk -pdf -outdir=_build practical06/cs101F2019_practical06.tex
 - latexmk -pdf -outdir=_build quiz01/cs101F2019_studyguide_quiz01.tex
+- latexmk -pdf -outdir=_build quiz01/cs101F2019_studyguide_exam01.tex
 deploy:
   provider: releases
   api_key:
@@ -35,6 +36,7 @@ deploy:
     - _build/cs101F2019_practical05.pdf
     - _build/cs101F2019_practical06.pdf
     - _build/cs101F2019_studyguide_quiz01.pdf
+    - _build/cs101F2019_studyguide_exam01.pdf
   skip_cleanup: true
   on:
     tags: true

@@ -1,0 +1,400 @@
+\documentclass[11pt]{article}
+
+% NOTE: The "Edit" sections are changed for each assignment
+
+% Edit these commands for each assignment
+
+\newcommand{\assignmentduedate}{November 4}
+\newcommand{\assignmentassignedate}{November 1}
+\newcommand{\assignmentnumber}{Six}
+
+\newcommand{\labyear}{2019}
+\newcommand{\labday}{Friday}
+\newcommand{\labdueday}{Monday}
+\newcommand{\labtime}{9:00 am}
+
+\newcommand{\assigneddate}{Assigned: \labday, \assignmentassignedate, \labyear{} at \labtime{}}
+\newcommand{\duedate}{Due: \labdueday, \assignmentduedate, \labyear{} at \labtime{}}
+
+% Edit these commands to give the name to the main program
+
+\newcommand{\mainprogram}{\lstinline{Experiment}}
+\newcommand{\mainprogramsource}{\lstinline{src/main/java/practicalsix/experiment/Experiment.java}}
+
+% Edit these commands to give the name to the test suite
+
+\newcommand{\testprogram}{\lstinline{TestExperiment}}
+\newcommand{\testprogramsource}{\lstinline{src/test/java/practicalsix/TestExperiment.java}}
+
+% Edit this commands to describe key deliverables
+
+\newcommand{\reflection}{\lstinline{writing/reflection.md}}
+
+% Commands to describe key development tasks
+
+% --> Running gatorgrader.sh
+\newcommand{\gatorgraderstart}{\command{gradle grade}}
+\newcommand{\gatorgradercheck}{\command{gradle grade}}
+
+% --> Compiling and running and testing program with gradle
+\newcommand{\gradlebuild}{\command{gradle build}}
+\newcommand{\gradletest}{\command{gradle test}}
+\newcommand{\gradlerun}{\command{gradle run}}
+
+% Commands to describe key git tasks
+
+% NOTE: Could be improved, problems due to nesting
+
+\newcommand{\gitcommitfile}[1]{\command{git commit #1}}
+\newcommand{\gitaddfile}[1]{\command{git add #1}}
+
+\newcommand{\gitadd}{\command{git add}}
+\newcommand{\gitcommit}{\command{git commit}}
+\newcommand{\gitpush}{\command{git push}}
+\newcommand{\gitpull}{\command{git pull}}
+
+\newcommand{\gitcommitmainprogram}{\command{git commit src/main/java/practicalsix/experiment/Experiment.java -m "Your
+descriptive commit message"}}
+
+% Use this when displaying a new command
+
+\newcommand{\command}[1]{``\lstinline{#1}''}
+\newcommand{\program}[1]{\lstinline{#1}}
+\newcommand{\url}[1]{\lstinline{#1}}
+\newcommand{\channel}[1]{\lstinline{#1}}
+\newcommand{\option}[1]{``{#1}''}
+\newcommand{\step}[1]{``{#1}''}
+
+\usepackage{pifont}
+\newcommand{\checkmark}{\ding{51}}
+\newcommand{\naughtmark}{\ding{55}}
+
+\usepackage{listings}
+\lstset{
+  basicstyle=\small\ttfamily,
+  columns=flexible,
+  breaklines=true
+}
+
+\usepackage{fancyhdr}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{fancyhdr}
+
+\pagestyle{fancy}
+
+\fancyhf{}
+\rhead{Computer Science 101}
+\lhead{Practical Assignment \assignmentnumber{}}
+\rfoot{Page \thepage}
+\lfoot{\duedate}
+
+\usepackage{titlesec}
+\titlespacing\section{0pt}{6pt plus 4pt minus 2pt}{4pt plus 2pt minus 2pt}
+
+\newcommand{\labtitle}[1]
+{
+  \begin{center}
+    \begin{center}
+      \bf
+      CMPSC 101\\Data Abstraction\\
+      Fall 2019\\
+      \medskip
+    \end{center}
+    \bf
+    #1
+  \end{center}
+}
+
+\begin{document}
+
+\thispagestyle{empty}
+
+\labtitle{Practical \assignmentnumber{} \\ \assigneddate{} \\ \duedate{}}
+
+\section*{Objectives}
+
+To continue to practice using GitHub to access the files for an assignment. You
+will complete a programming project using the minimal source code provided by
+the course instructor, ultimately implementing a framework for experimentally
+evaluating two algorithms for arithmetic computation. Specifically, you will
+create and test both an iterative and a recursive implementation of Java
+programs that calculate numbers in the Factorial sequence. You will also
+practice creating a data table and calculating an order of growth ratio, honing
+your ability to analytically and empirically evaluate the worst-case time
+complexity of an algorithm. Finally, you will continue to learn how to implement
+and test a Java program, practicing the creation of Java classes on your own and
+using an automated grading tool to assess your progress towards correctly
+completing the project.
+
+\section*{Suggestions for Success}
+
+\begin{itemize}
+  \setlength{\itemsep}{0pt}
+
+\item {\bf Follow each step carefully}. Slowly read each sentence in the
+  assignment sheet, making sure that you precisely follow each instruction. Take
+  notes about each step that you attempt, recording your questions and ideas and
+  the challenges that you faced. If you are stuck, then please tell a technical
+  leader or instructor what assignment step you recently completed.
+
+\item {\bf Regularly ask and answer questions}. Please log into Slack at the
+  start of a laboratory or practical session and then join the appropriate
+  channel. If you have a question about one of the steps in an assignment, then
+  you can post it to the designated channel. Or, you can ask a student sitting
+  next to you or talk with a technical leader or the course instructor.
+
+\item {\bf Store your files in GitHub}. Starting with this laboratory
+  assignment, you will be responsible for storing all of your files (e.g., Java
+  source code and Markdown-based writing) in a Git repository using GitHub
+  Classroom. Please verify that you have saved your source code in your Git
+  repository by using \command{git status} to ensure that everything is updated.
+  You can see if your assignment submission meets the established correctness
+  requirements by using the provided checking tools on your local computer and
+  in checking the commits in GitHub.
+
+\item {\bf Keep all of your files}. Don't delete your programs, output files,
+  and written reports after you submit them through GitHub; you will need them
+  again when you study for the quizzes and examinations and work on the other
+  laboratory, practical, and final project assignments.
+
+\item {\bf Explore teamwork and technologies}. While certain aspects of the
+  laboratory assignments will be challenging for you, each part is designed to
+  give you the opportunity to learn both fundamental concepts in the field of
+  computer science and explore advanced technologies that are commonly employed
+  at a wide variety of companies. To explore and develop new ideas, you should
+  regularly communicate with your team and/or the student technical leaders.
+
+\item {\bf Hone your technical writing skills}. Computer science assignments
+  require to you write source code documentation and detailed notes of your
+  experiences when completing each task. Take extra care to ensure that your
+  writing is interesting and both grammatically and technically correct,
+  remembering that computer scientists must effectively communicate and
+  collaborate with their team members and the technical leaders and course
+  instructor.
+
+% \item {\bf Review the Honor Code on the syllabus}. While you may discuss your
+%   assignments with others, copying source code or writing is a violation of
+%   Allegheny College's Honor Code.
+
+\end{itemize}
+
+\section*{Reading Assignment}
+
+If you have not done so already, please read all of the relevant ``GitHub
+Guides'', available at \url{https://guides.github.com/}, that explain how to
+use many of the features that GitHub provides. In particular, please make sure
+that you have read guides such as ``Mastering Markdown'' and ``Documenting Your
+Projects on GitHub''; each of them will help you to understand how to use both
+GitHub and GitHub Classroom. To do well on this laboratory assignment, you
+should also read Section 1.5.2 in the textbook, paying particularly close
+attention to the material about iteration constructs. You should also review
+Sections 4.1 through 4.3 and read Sections 5.1 through 5.5, focusing on Code
+Fragment 5.13 and the text that describes and analyzes it. Please see the
+course instructor or one of the technical leaders if you have questions about
+these reading assignments.
+
+\section*{Accessing the Practical Assignment on GitHub}
+
+To access the laboratory assignment, you should go into the
+\channel{\#announcements} channel in our Slack team and find the announcement
+that provides a link for it. Copy this link and paste it into a web browser.
+Now, you should accept the assignment and see that GitHub Classroom created a
+new GitHub repository for you to access the assignment's starting materials and
+to store the completed version of your assignment. Specifically, to access your
+new GitHub repository for this assignment, please click the green ``Accept''
+button and then click the link that is prefaced with the label ``Your assignment
+has been created here''. If you accepted the assignment and correctly followed
+these steps, you should have created a GitHub repository with a name like
+``Allegheny-Computer-Science-101-Fall-2019/computer-science-101-fall-2019-practical-6-gkapfham''.
+Remember, unless you provide the instructor with documentation of the
+extenuating circumstances that you are facing, not accepting the assignment
+means that you automatically receive a failing grade for it.
+
+Before you move to the next step of this assignment, please make sure that you
+read all of the content on the web site for your new GitHub repository, paying
+close attention to the technical details about the commands that you will type
+and the output that your program must produce. Now you are ready to download the
+starting materials to your laboratory computer. Click the ``Clone or download''
+button and, after ensuring that you have selected ``Clone with SSH'', please
+copy this command to your clipboard. To enter into your course directory you
+should now type \command{cd cs101F2019}. By typing \command{git clone} in your
+terminal and then pasting in the string that you copied from the GitHub site you
+will download all of the code for this assignment. For instance, if the course
+instructor ran the \command{git clone} command in the terminal, it would look
+like:
+
+\begin{lstlisting}
+  git clone git@github.com:Allegheny-Computer-Science-101-F2019/computer-science-101-fall-2019-practical-6-gkapfham.git
+\end{lstlisting}
+
+After this command finishes, you can use \command{cd} to change into the new
+directory. If you want to \step{go back} one directory from your current
+location, then you can type the command \command{cd ..}. Please continue to use
+the \command{cd} and \command{ls} commands to explore the files that you
+automatically downloaded from GitHub. What files and directories do you see?
+What do you think is their purpose? Spend some time exploring, sharing your
+discoveries with a neighbor and a \mbox{technical leaders}. Specifically, each
+student should identify the Java methods that they must add to complete the
+assignment and then understand how they connect to the provided classes. Can you
+create a diagram showing all of class relationships? Make sure that you have the
+instructor check your project diagram.
+
+\section*{Evaluating the Performance of Recursion and Iteration}
+
+This primary goal for this assignment is to afford students the opportunity to
+practice creating their own Java classes and JUnit test cases. Critically, it is
+important to note that the build of the provided source code will fail because
+it is missing methods that you must implement. As such, it is your
+responsibility to study the provided source code and add in all of the new code
+that you need to ensure that the system compiles and runs an experiment to
+evaluate the efficiency of the \program{RecursiveFactorialComputation} and the
+\program{IterativeFactorialComputation}. Specifically, the equation for the
+factorial sequence is defined as $n! = n \times n-1 \times n-2 \times \ldots
+\times 1$ or $n! = n \times (n-1)!$ when $n \geq 1$, with $0! = 1$ defined as
+the base case. Following this recursive equation, you can create and test an
+implementation of the \program{public long compute(int value)} method in the
+\program{RecursiveFactorialComputation} class. As in the previous assignments,
+please make sure that you correctly set the name of this class so that it
+integrates correctly into the experimentation framework. Finally, make sure that
+you understand how this Java class relates to and is tested by the others that
+are the needed for this practical assignment. Make sure to consult your diagram!
+
+Using a loop, you should also create a \program{compute} method in
+\program{IterativeFactorialComputation}. Students who want to learn more about
+the numerical values in the factorial sequence are encouraged to visit the web
+site \url{http://www.tsm-resources.com/alists/fact.html}. You can also learn
+more about the properties of and values in the factorial sequence by visiting
+the web site \url{https://www.mathsisfun.com/numbers/factorial.html}. Once you
+have implemented methods that pass your own test suite and compute the correct
+numerical values, you are ready to run a doubling experiment. Please proceed
+cautiously as you run the experiments: it is possible that one or more of the
+algorithms may not be efficient, thus potentially requiring either extended
+periods of time to run an experiment campaign or program crashes. With that
+said, if it is necessary to do so you should determine what inputs lead to poor
+performance and/or crashes and then explain why they are evident. Finally,
+please bear in mind that the numerical values in the factorial sequence grow
+very rapidly and thus even the \program{long} data type may not be able to
+correctly store the computed values.
+
+Figure~\ref{fig:code} provides a correct implementation of a \program{compute}
+method that recursively calculates a requested number in the factorial sequence.
+%
+Although you do not need to exactly adopt this solution, you should carefully
+study it to ensure that you can identify the base case(s) and the recursive
+case. Finally, please make sure that you can classify this method as exhibiting
+linear, binary, or multiple recursion.
+%
+After reviewing this method's source code, do you have an intuition about how
+its performace would compare to the recursive implementation for the Fibonacci
+sequence?
+
+\begin{figure}[t]
+  \centering
+
+  \begin{verbatim}
+  public long compute(int chosenValue) {
+    long result = 1L;
+    if ( chosenValue == 0 ) {
+      return result;
+    } else if ( chosenValue == 1 ) {
+      return result;
+    } else {
+      return chosenValue * compute(chosenValue - 1);
+    }
+  }
+  \end{verbatim}
+
+  \vspace*{-.5in}
+  \caption{A Suggestion for How to Recursively Compute the Factorial Number.}~\label{fig:code}
+  \vspace*{-.25in}
+\end{figure}
+
+
+\section*{Checking the Correctness of Your Program}
+
+As verified by Checkstyle tool, the source code for \mainprogram{} and its test
+suite must adhere to all of the requirements in the Google Java Style Guide
+available at \url{https://google.github.io/styleguide/javaguide.html}. Instead
+of requiring you to manually check that your deliverables adhere to these
+industry-accepted standards, tools will make it easy for you to automatically
+check if your submission meets the standards for correctness. For instance,
+Gradle will run the provided tests, while GatorGrader will check to ensure that
+\mainprogram{} uses the correct number of \command{println} statements and that
+you committed to GitHub a sufficient number of times during this assignment. To
+get started with the use of GatorGrader, type the command \gatorgraderstart{}
+in your Docker container. If you have mistakes in your assignment, then you will
+need to review GatorGrader's output, find the mistake, and try to fix it. Once
+your program is building correctly, fulfilling at least some of the
+assignment's requirements, you should transfer your files to GitHub using the
+\gitcommit{} and \gitpush{} commands. For example, if you want to signal that
+the \mainprogramsource{} file has been changed and is ready for transfer to
+GitHub you would first type \gitcommitmainprogram{} in your terminal, followed
+by typing \gitpush{}.
+
+After the course instructor enables \step{continuous integration} with a system
+called Travis CI, when you use the \gitpush{} command to transfer your source
+code to your GitHub repository, Travis CI will initialize a \step{build} of your
+assignment, checking to see if it meets all of the requirements. If both your
+source code and documentation meet all of the established requirements, then you
+will see a green \checkmark{} in the listing of commits in GitHub after awhile.
+If your submission does not meet the requirements, a red \naughtmark{} will
+appear instead. The instructor will reduce a student's grade for this assignment
+if the red \naughtmark{} appears on the last commit in GitHub immediately before
+the assignment's due date. Yet, if the green \checkmark{} appears on the last
+commit in your GitHub repository, then you satisfied all of the main checks,
+thereby allowing the course instructor to evaluate other aspects of your source
+code and writing, as further described in the \step{Evaluation} section of this
+assignment sheet. Unless you provide the instructor with documentation of the
+extenuating circumstances that you are facing, no late work will be considered
+towards your grade for this practical assignment.
+
+\section*{Summary of the Required Deliverables}
+
+\noindent Students do not need to submit printed source code or technical
+writing for any assignment in this course. Instead, this assignment invites you
+to submit, using GitHub, the following deliverables.
+
+\begin{enumerate}
+
+  \setlength{\itemsep}{0in}
+
+\item A properly documented and correct version of all the Java source files
+  (i.e., factorial methods, experiments, and tests) that meets the set
+  requirements and produces the desired output.
+  %
+  Although you are not required to complete a technical writing assignment as
+  part of this project, you should make sure that you understand and can discuss
+  the resulting data tables.
+
+\end{enumerate}
+
+\section*{Evaluation of Your Practical Assignment}
+
+Using a report that the instructor shares with you through the commit log in
+GitHub, you will privately received a grade on this assignment and feedback on
+your submitted deliverables. Your grade for the assignment will be a function of
+the whether or not it was submitted in a timely fashion and if your program
+received a green \checkmark{} indicating that it met all of the baseline
+requirements checked by GatorGrader.
+%
+Please remember to read your GitHub repository's \program{README.md} file for a
+description of the completion grade that you will receive for this practical
+assignment.
+%
+You can talk with the instructor if you have questions about the evaluation of
+this practical assignment.
+
+\section*{Adhering to the Honor Code}
+
+In adherence to the Honor Code, students should complete this assignment on an
+individual basis. While it is appropriate for students in this class to have
+high-level conversations about the assignment, it is necessary to distinguish
+carefully between the student who discusses the principles underlying a problem
+with others and the student who produces assignments that are identical to, or
+merely variations on, someone else's work. Deliverables (e.g., Java source code
+or Markdown-based technical writing) that are nearly identical to the work of
+others will be taken as evidence of violating the \mbox{Honor Code}. Please see
+the course instructor if you have questions about this policy.
+
+\end{document}

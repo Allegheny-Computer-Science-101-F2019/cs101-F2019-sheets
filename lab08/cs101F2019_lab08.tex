@@ -195,8 +195,8 @@ should also review Section 1.5.2 in the textbook, paying particularly close
 attention to the material on iteration constructs. You should also review
 Sections 4.1 through 4.3 and Sections 5.1 through 5.5. Critically, you should
 read all of the content in Section 3.2 about the \program{SinglyLinkedList} data
-structure. Please see the instructor or a teaching assistant if you have
-questions about these reading assignments.
+structure. Please see the instructor or a technical leader if you have questions
+about these reading assignments.
 
 \section*{Accessing the Laboratory Assignment on GitHub}
 
@@ -238,9 +238,9 @@ location, then you can type the command \command{cd ..}. Please continue to use
 the \command{cd} and \command{ls} commands to explore the files that you
 automatically downloaded from GitHub. What files and directories do you see?
 What do you think is their purpose? Spend some time exploring, sharing your
-discoveries with the course instructor, a neighbor, and a \mbox{teaching
-assistant}. Specifically, each student should ensure that they fully understand
-the purpose and behavior of every test case in the \testprogramsource{}.
+discoveries with the course instructor, a neighbor, and a \mbox{technical
+leader}. Specifically, each student should ensure that they fully understand the
+purpose and behavior of every test case in the \testprogramsource{}.
 
 \section*{Implementing, Testing, and Evaluating a Singly Linked List}
 
@@ -303,17 +303,44 @@ anomalous ratios in your data tables, can you explain why they are sometimes
 evident?
 
 Remember, if you want to \step{build} your program you can type the command
-\gradlebuild{} in your terminal, thereby causing the Java compiler to check your
-program for errors and get it ready to run. If you notice that some of the test
-cases do not pass, please improve your implementation until all of the tests
-pass and your program's output looks similar to that which is provided in
-Figure~\ref{fig:output}. Once the program runs and the tests pass, please
-reflect on this process. You should write your reflections in a file called
-\reflection{}. To complete this assignment part, you should write one paragraph
-that reports on your experiences. Your \reflection{} file should have answers to
-the questions about the \program{SinglyLinkedList}'s implementation, testing,
-and experimental evaluation; please provide your data table in a Markdown-based
-fenced code block.
+\gradlebuild{} in your Docker container, thereby causing the Java compiler to
+check your program for errors and get it ready to run. If you notice that some
+of the test cases do not pass, please improve your implementation until all of
+the tests pass and your program's output looks similar to that which is provided
+in Figure~\ref{fig:output}. If you are not able to implement some aspect of the
+\mainprogram, then please talk to the course instructor or a student technical
+leader.
+%
+Once the program runs and the tests pass, please reflect on this process. You
+should write your reflections in a file called \reflection{}. To complete this
+assignment part, you should write one paragraph that reports on your
+experiences. Your \reflection{} file should have answers to the questions about
+the \program{SinglyLinkedList}'s implementation, testing, and experimental
+evaluation; please provide your data table in a Markdown-based fenced code
+block.
+%
+Here are some of the technical questions that you should aim to answer during
+the completion of this laboratory assignment:
+
+\begin{enumerate}
+
+  \setlength{\itemsep}{0pt}
+
+  \item For the chosen input sizes in the results table, can you characterize
+    the performance of the \program{toString} method? Using your results table,
+    how can you tell if this method is fast or not?
+
+  \item Using the Big-Oh notation, what is the worst-case time complexity for
+    the \program{toString} method?
+
+  \item Why is the \program{SinglyLinkedList} designed to contain both a
+    \program{Node} class and object inside of it?
+
+  \item Why does the declaration of the \program{SinglyLinkedList} use the
+    notation \program{SinglyLinkedList<E>} in its declaration? Why does the
+    \program{Node<E>} class use a similar notation in its declaration?
+
+\end{enumerate}
 
 \section*{Checking the Correctness of Your Program and Writing}
 

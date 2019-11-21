@@ -257,7 +257,10 @@ return a \program{String} of the form ``$(e_1, e_2, \ldots, e_n)$''. Once you
 are confident that your \program{toString} method returns the correct textual
 representation of an \program{ArrayList} you should also implement generic
 methods for equivalence testing (i.e., \program{equals}) and data replacement
-(i.e., \program{set}).
+(i.e., \program{set}). To ensure that you effectively get started on these
+tasks, please consider the following implementation of the \program{set} method.
+Can you fully explain why this method throws the
+\program{IndexOutOfBoundsException}?
 
 \begin{verbatim}
   public E set(int index, E element) throws IndexOutOfBoundsException {
@@ -289,11 +292,11 @@ methods for equivalence testing (i.e., \program{equals}) and data replacement
 \end{figure}
 
 Remember, if you want to \step{build} your program you can type the command
-\gradlebuild{} in your terminal, thereby causing the Java compiler to check your
-program for errors and get it ready to run. If you notice that some of the test
-cases do not pass, please improve your implementation until all of the tests
-pass and your program's output looks similar to that which is provided in
-Figure~\ref{fig:output}. Once the program runs and the tests pass, please
+\gradlebuild{} in your Docker container, thereby causing the Java compiler to
+check your program for errors and get it ready to run. If you notice that some
+of the test cases do not pass, please improve your implementation until all of
+the tests pass and your program's output looks similar to that which is provided
+in Figure~\ref{fig:output}. Once the program runs and the tests pass, please
 reflect on this process. You should write your reflections in a file called
 \reflection{}. To complete this assignment part, you should write one paragraph
 that reports on your experiences. Your \reflection{} file should have answers to
@@ -372,8 +375,8 @@ to submit, using GitHub, the following deliverables.
   response to each question.
 
 \item A properly documented and correct version of all the Java source files
-  (e.g., the file for \program{ArrayList}) that meets the set requirements and
-  produces the desired interaction output.
+  (e.g., the file for \program{ArrayList.java}) that meets the set requirements
+  and produces the desired interaction output.
 
 \end{enumerate}
 

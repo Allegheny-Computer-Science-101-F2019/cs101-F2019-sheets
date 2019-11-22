@@ -119,101 +119,25 @@ descriptive commit message"}}
 
 \section*{Objectives}
 
-To continue to practice using GitHub to access the files for an assignment. You
-will complete a programming project using the Java source code given by the
-course instructor, ultimately implementing and testing several methods provided
-by the \mainprogram{}. Specifically, you will create and test a method that
-strategically uses the \mainprogram's node structure to efficiently implement
-the removal of the last node in the list. Also, you will implement and test both
-a \program{main} method and a comprehensive method for ``equivalence testing''
-with the \mainprogram{}. Finally, you will continue to learn how to implement
-and test a Java program, practicing the use of an automated grading tool to
-assess your progress towards correctly completing the project.
-
-\section*{Suggestions for Success}
-
-\begin{itemize}
-  \setlength{\itemsep}{0pt}
-
-\item {\bf Follow each step carefully}. Slowly read each sentence in the
-  assignment sheet, making sure that you precisely follow each instruction. Take
-  notes about each step that you attempt, recording your questions and ideas and
-  the challenges that you faced. If you are stuck, then please tell a technical
-  leader or instructor what assignment step you recently completed.
-
-\item {\bf Regularly ask and answer questions}. Please log into Slack at the
-  start of a laboratory or practical session and then join the appropriate
-  channel. If you have a question about one of the steps in an assignment, then
-  you can post it to the designated channel. Or, you can ask a student sitting
-  next to you or talk with a technical leader or the course instructor.
-
-\item {\bf Store your files in GitHub}. Starting with this laboratory
-  assignment, you will be responsible for storing all of your files (e.g., Java
-  source code and Markdown-based writing) in a Git repository using GitHub
-  Classroom. Please verify that you have saved your source code in your Git
-  repository by using \command{git status} to ensure that everything is updated.
-  You can see if your assignment submission meets the established correctness
-  requirements by using the provided checking tools on your local computer and
-  in checking the commits in GitHub.
-
-\item {\bf Keep all of your files}. Don't delete your programs, output files,
-  and written reports after you submit them through GitHub; you will need them
-  again when you study for the quizzes and examinations and work on the other
-  laboratory, practical, and final project assignments.
-
-\item {\bf Explore teamwork and technologies}. While certain aspects of the
-  laboratory assignments will be challenging for you, each part is designed to
-  give you the opportunity to learn both fundamental concepts in the field of
-  computer science and explore advanced technologies that are commonly employed
-  at a wide variety of companies. To explore and develop new ideas, you should
-  regularly communicate with your team and/or the student technical leaders.
-
-\item {\bf Hone your technical writing skills}. Computer science assignments
-  require to you write source code documentation and detailed notes of your
-  experiences when completing each task. Take extra care to ensure that your
-  writing is interesting and both grammatically and technically correct,
-  remembering that computer scientists must effectively communicate and
-  collaborate with their team members and the technical leaders and course
-  instructor.
-
-\item {\bf Review the Honor Code on the syllabus}. While you may discuss your
-  assignments with others, copying source code or writing is a violation of
-  Allegheny College's Honor Code.
-
-\end{itemize}
-
-\vspace*{-.2in}
-
-\section*{Reading Assignment}
-
-If you have not done so already, please read all of the relevant ``GitHub
-Guides'', available at \url{https://guides.github.com/}, that explain how to use
-many of the features that GitHub provides. In particular, please make sure that
-you have read guides such as ``Mastering Markdown'' and ``Documenting Your
-Projects on GitHub''; each of them will help you to understand how to use both
-GitHub and GitHub Classroom. To do well on this practical assignment, you
-should also read Section 1.5.2 in the textbook, paying particularly close
-attention to the material about iteration constructs. You should also review the
-content about lists and equivalence testing in Sections 3.3 through 3.6. Please
-see the course instructor if you have questions about these reading assignments.
+To learn more about the world of open-source software and to practice the skill
+of downloading, installing, and using open-source software written in a
+programming language like Java.
+%
+You will learn more about a total of three open-source projects available on
+GitHub and then attempt to download and install one of these projects, you will
+reporting on your experience in writing.
+%
+Please refer to the documentation in your GitHub repository for more details
+about the steps that you must take to complete this project.
 
 \section*{Accessing the Practical Assignment on GitHub}
 
 To access the practical assignment, you should go into the
 \channel{\#announcements} channel in our Slack team and find the announcement
-that provides a link for it. Copy this link and paste it into a web browser.
-Now, you should accept the assignment and see that GitHub Classroom created a
-new GitHub repository for you to access the assignment's starting materials and
-to store the completed version of your assignment. Specifically, to access your
-new GitHub repository for this assignment, please click the green ``Accept''
-button and then click the link that is prefaced with the label ``Your assignment
-has been created here''. If you accepted the assignment and correctly followed
-these steps, you should have created a GitHub repository with a name like
-``Allegheny-Computer-Science-101-Fall-2019/computer-science-101-fall-2019-practical-8-gkapfham''.
-
-% Unless you provide the instructor with documentation of the extenuating
-% circumstances that you are facing, not accepting the assignment means that you
-% automatically receive a failing grade for it.
+that provides a link for it. If you accepted the assignment and correctly
+followed these steps, you should have created a GitHub repository with a name
+like
+``Allegheny-Computer-Science-101-Fall-2019/computer-science-101-fall-2019-practical-final-gkapfham''.
 
 Before you move to the next step of this assignment, please make sure that you
 read all of the content on the web site for your new GitHub repository, paying
@@ -221,155 +145,7 @@ close attention to the technical details about the commands that you will type
 and the output that your program must produce. Now you are ready to download the
 starting materials to your practical computer. Click the ``Clone or download''
 button and, after ensuring that you have selected ``Clone with SSH'', please
-copy this command to your clipboard. To enter into your course directory you
-should now type \command{cd cs101S2019}. By typing \command{git clone} in your
-terminal and then pasting in the string that you copied from the GitHub site you
-will download all of the code for this assignment. For instance, if the course
-instructor ran the \command{git clone} command in the terminal, it would look
-like:
-
-\begin{lstlisting}
-  git clone git@github.com:Allegheny-Computer-Science-101-S2019/computer-science-101-fall-2019-practical-8-gkapfham.git
-\end{lstlisting}
-
-After this command finishes, you can use \command{cd} to change into the new
-directory. If you want to \step{go back} one directory from your current
-location, then you can type the command \command{cd ..}. Please continue to use
-the \command{cd} and \command{ls} commands to explore the files that you
-automatically downloaded from GitHub. What files and directories do you see?
-What do you think is their purpose? Spend some time exploring, sharing your
-discoveries with a neighbor and a \mbox{teaching assistant}. Specifically, each
-student should ensure that they can draw a technical diagram of a \mainprogram{}
-and that they fully understand the purpose and behavior of every test case in
-the \program{TestDoublyLinkedList}.
-
-\section*{Implementation and Testing of a Doubly Linked Data Structure}
-
-\begin{figure}[t]
-  \centering
-  \begin{verbatim}
-
-    DoublyLinkedList Before removeLast:
-    (0, 1, 2, 3, 4, 5, 6, 7, 8, 9)
-
-    DoublyLinkedList After removeLast:
-    (0, 1, 2, 3, 4, 5, 6, 7, 8)
-  \end{verbatim}
-
-  \vspace*{-.35in}
-  \caption{The Expected Output of the \mainprogram{} Program.}~\label{fig:output}
-  \vspace*{-.1in}
-\end{figure}
-
-\begin{figure}[t]
-  \centering
-  \begin{verbatim}
-
-    public E removeLast() {
-      if (isEmpty()) {
-        return null;
-      }
-      return remove(trailer.getPrev());
-    }
-
-  \end{verbatim}
-
-  \vspace*{-.6in}
-  \caption{The Implementation of the \program{removeLast} Method.}~\label{fig:code}
-  \vspace*{-.25in}
-\end{figure}
-
-This practical assignment invites you to implement a \mainprogram{} that can
-produce the output given in Figure~\ref{fig:output}. Specifically, you must add
-the source code provided in Figure~\ref{fig:code} to your implementation of the
-\mainprogram{}. Is this an efficient implementation of this method? What is the
-worst-case time complexity of this method? How can you tell? Now, you are also
-responsible for adding source code to the \program{main} method in
-\mainprogram{} so that it can produce the required output. The final step for
-this practical assignment invites you to implement an \program{equals} method
-that performs ``equivalence testing'' for two instances of \mainprogram{}. To
-learn more about equivalence testing, please review the content in Section 3.5
-of the textbook. Taking into consideration that the \mainprogram{} employs
-header and trailer sentinels, your \program{equals} method should determine if
-two instances contain the same data values. For inspiration, refer to the
-example of the \program{equals} method for the \program{SinglyLinkedList}, as
-provided in the source code for the most recent laboratory assignment. Make sure
-that your \program{equals} does not call a method on a \program{null} object!
-
-\begin{verbatim}
-  public boolean equals(Object list) {
-    if (list == null) {
-      return false;
-    }
-    if (getClass() != list.getClass()) {
-      return false;
-    }
-    SinglyLinkedList<?> other = (SinglyLinkedList)list;
-    if (size != other.size) {
-      return false;
-    }
-    Node<?> walkA = head;
-    Node<?> walkB = other.head;
-    while (walkA != null) {
-      if (!walkA.getElement().equals(walkB.getElement())) {
-        return false;
-      }
-      walkA = walkA.getNext();
-      walkB = walkB.getNext();
-    }
-    return true;
-  }
-\end{verbatim}
-
-% Remember, if you want to \step{build} your program you can type the command
-% \gradlebuild{} in your terminal, thereby causing the Java compiler to check your
-% program for errors and get it ready to run. If you notice that some of the test
-% cases do not pass, please improve your implementation until all of the tests
-% pass and your program's output looks similar to that which is provided in
-% Figure~\ref{fig:output}.
-
-\section*{Checking the Correctness of Your Program}
-
-As verified by the Checkstyle tool, the source code for the \mainprogram{} and
-all of the other Java files must adhere to all of the requirements in the Google
-Java Style Guide available at
-\url{https://google.github.io/styleguide/javaguide.html}. Instead of requiring
-you to manually check that your deliverables adhere to these industry-accepted
-standards, GatorGrader makes it easy for you to automatically check if your
-submission meets the correctness requirements. For instance, GatorGrader will
-run your tests and check to ensure that certain files, like
-\mainprogramsource{}, contain the right number of \program{println} statements.
-
-To get started with the use of GatorGrader, type the command
-\gatorgraderstart{} in your terminal window. If your assignment's code does not
-meet all of the project's requirements, then you will see a summary of the
-failing checks along with a statement giving the percentage of checks that are
-currently passing. If you have mistakes in your assignment, then you will need
-to review GatorGrader's output, find the mistake, and try to fix it, consulting
-your text book and course notes as needed. Once your program is building
-correctly, fulfilling at least some of the assignment's requirements, you
-should transfer your files to GitHub using the \gitcommit{} and \gitpush{}
-commands. For example, if you want to signal that the \mainprogramsource{} file
-has been changed and is ready for transfer to GitHub you would first type
-\gitcommitmainprogram{} in your terminal, followed by typing \gitpush{} and
-checking to see that the transfer worked.
-
-After the course instructor enables \step{continuous integration} with a system
-called Travis CI, when you use the \gitpush{} command to transfer your source
-code to your GitHub repository, Travis CI will initialize a \step{build} of your
-assignment, checking to see if it meets all of the requirements. If both your
-source code and documentation meet all of the established requirements, then you
-will see a green \checkmark{} in the listing of commits in GitHub after awhile.
-If your submission does not meet the requirements, a red \naughtmark{} will
-appear instead. The instructor will reduce a student's grade for this assignment
-if the red \naughtmark{} appears on the last commit in GitHub immediately before
-the assignment's due date. Yet, if the green \checkmark{} appears on the last
-commit in your GitHub repository, then you satisfied all of the main checks,
-thereby allowing the course instructor to evaluate other aspects of your source
-code and writing, as further described in the \step{Evaluation} section of this
-assignment sheet. Unless you provide the instructor with documentation of the
-extenuating circumstances that you are facing, no late work will be considered
-towards your grade for this practical assignment.
+copy this command to your clipboard.
 
 \section*{Summary of the Required Deliverables}
 
@@ -383,17 +159,15 @@ to submit, using GitHub, the following deliverables.
 
   \setlength{\itemsep}{0in}
 
-\item A properly documented and correct version of all the Java source files
-  (i.e., the \mainprogram{} and its JUnit test suite) that meets the set
-  requirements and produces the desired output. Along with adding the required
-  output code, you must implement methods that remove the last node from and
-  perform equivalence testing on the \program{DoublyLinkedList} data structure.
+\item A document written in Markdown that provides three paragraphs that give an
+  overview of three separate open-source projects available for download from
+  GitHub.
 
 \end{enumerate}
 
 \vspace*{-.2in}
 
-\section*{Evaluation of Your Practical Assignment}
+\section*{Evaluation of Your Final Practical Assignment}
 
 Using a report that the instructor shares with you through the commit log in
 GitHub, you will privately received a grade on this assignment and feedback on

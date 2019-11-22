@@ -22,7 +22,7 @@ script:
 - latexmk -pdf -outdir=_build practical07/cs101F2019_practical07.tex
 - latexmk -pdf -outdir=_build practical08/cs101F2019_practical08.tex
 - latexmk -pdf -outdir=_build practical09/cs101F2019_practical09.tex
-- latexmk -pdf -outdir=_build practical09/cs101F2019_practical_final.tex
+- latexmk -pdf -outdir=_build practical_final/cs101F2019_practical_final.tex
 - latexmk -pdf -outdir=_build quiz01/cs101F2019_studyguide_quiz01.tex
 - latexmk -pdf -outdir=_build exam01/cs101F2019_studyguide_exam01.tex
 deploy:

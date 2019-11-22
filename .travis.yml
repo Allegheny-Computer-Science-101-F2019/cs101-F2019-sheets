@@ -21,6 +21,7 @@ script:
 - latexmk -pdf -outdir=_build practical06/cs101F2019_practical06.tex
 - latexmk -pdf -outdir=_build practical07/cs101F2019_practical07.tex
 - latexmk -pdf -outdir=_build practical08/cs101F2019_practical08.tex
+- latexmk -pdf -outdir=_build practical09/cs101F2019_practical09.tex
 - latexmk -pdf -outdir=_build quiz01/cs101F2019_studyguide_quiz01.tex
 - latexmk -pdf -outdir=_build exam01/cs101F2019_studyguide_exam01.tex
 deploy:
@@ -45,6 +46,7 @@ deploy:
     - _build/cs101F2019_practical06.pdf
     - _build/cs101F2019_practical07.pdf
     - _build/cs101F2019_practical08.pdf
+    - _build/cs101F2019_practical09.pdf
     - _build/cs101F2019_studyguide_quiz01.pdf
     - _build/cs101F2019_studyguide_exam01.pdf
   skip_cleanup: true

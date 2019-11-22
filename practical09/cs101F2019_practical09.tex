@@ -290,10 +290,35 @@ that performs ``equivalence testing'' for two instances of \mainprogram{}. To
 learn more about equivalence testing, please review the content in Section 3.5
 of the textbook. Taking into consideration that the \mainprogram{} employs
 header and trailer sentinels, your \program{equals} method should determine if
-two instances contain the same data values. For inspiration, you can see a full
-example of an \program{equals} method for the \program{SinglyLinkedList} by
-looking at the source code for the most recent laboratory assignment. Make sure
+two instances contain the same data values. For inspiration, refer to the
+example of the \program{equals} method for the \program{SinglyLinkedList}, as
+provided in the source code for the most recent laboratory assignment. Make sure
 that your \program{equals} does not call a method on a \program{null} object!
+
+\begin{verbatim}
+  public boolean equals(Object list) {
+    if (list == null) {
+      return false;
+    }
+    if (getClass() != list.getClass()) {
+      return false;
+    }
+    SinglyLinkedList<?> other = (SinglyLinkedList)list;
+    if (size != other.size) {
+      return false;
+    }
+    Node<?> walkA = head;
+    Node<?> walkB = other.head;
+    while (walkA != null) {
+      if (!walkA.getElement().equals(walkB.getElement())) {
+        return false;
+      }
+      walkA = walkA.getNext();
+      walkB = walkB.getNext();
+    }
+    return true;
+  }
+\end{verbatim}
 
 % Remember, if you want to \step{build} your program you can type the command
 % \gradlebuild{} in your terminal, thereby causing the Java compiler to check your
@@ -373,26 +398,26 @@ Using a report that the instructor shares with you through the commit log in
 GitHub, you will privately received a grade on this assignment and feedback on
 your submitted deliverables. Your grade for the assignment will be a function of
 the whether or not it was submitted in a timely fashion and if your program
-received a green \checkmark{} indicating that it met all of the requirements.
-Other factors will also influence your final grade on the assignment. In
-addition to studying the efficiency and effectiveness of your Java source code,
-the instructor will also evaluate the accuracy of the technical writing in your
-source code's comments. If your submission receives a red \naughtmark{}, the
-instructor will reduce your grade for the assignment while still considering the
-regularity with which you committed to your GitHub repository and the overall
-quality of your partially completed work. Please see the instructor if you have
-questions about the evaluation of this practical assignment.
+received a green \checkmark{} indicating that it met all of the baseline
+requirements checked by GatorGrader.
+%
+Please remember to read your GitHub repository's \program{README.md} file for a
+description of the completion grade that you will receive for this practical
+assignment.
+%
+You can talk with the instructor if you have questions about the evaluation of
+this practical assignment.
 
-\section*{Adhering to the Honor Code}
+% \section*{Adhering to the Honor Code}
 
-In adherence to the Honor Code, students should complete this assignment on an
-individual basis. While it is appropriate for students in this class to have
-high-level conversations about the assignment, it is necessary to distinguish
-carefully between the student who discusses the principles underlying a problem
-with others and the student who produces assignments that are identical to, or
-merely variations on, someone else's work. Deliverables (e.g., Java source code
-or Markdown-based technical writing) that are nearly identical to the work of
-others will be taken as evidence of violating the \mbox{Honor Code}. Please see
-the course instructor if you have questions about this policy.
+% In adherence to the Honor Code, students should complete this assignment on an
+% individual basis. While it is appropriate for students in this class to have
+% high-level conversations about the assignment, it is necessary to distinguish
+% carefully between the student who discusses the principles underlying a problem
+% with others and the student who produces assignments that are identical to, or
+% merely variations on, someone else's work. Deliverables (e.g., Java source code
+% or Markdown-based technical writing) that are nearly identical to the work of
+% others will be taken as evidence of violating the \mbox{Honor Code}. Please see
+% the course instructor if you have questions about this policy.
 
 \end{document}
